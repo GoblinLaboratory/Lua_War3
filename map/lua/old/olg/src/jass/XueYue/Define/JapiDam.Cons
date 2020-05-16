@@ -1,0 +1,65 @@
+//==========伤害特性常量 [针对本次伤害队列]==========
+#define JAPIDAM_STATE_DODGE 1 //闪避特性
+#define JAPIDAM_STATE_TRUTH 2 //真实伤害
+#define JAPIDAM_STATE_FSBJ 3 //法术暴击
+#define JAPIDAM_STATE_WLBJ 4 //物理暴击
+#define JAPIDAM_STATE_GD 5 //格挡 
+#define JAPIDAM_STATE_MFHD 6 //魔法护盾
+#define JAPIDAM_STATE_HD 7 //护盾
+
+#define JAPIDAM_SIGN		20		//标记
+#define JAPIDAM_SPECSIGN	21		//特殊标记
+#define JAPIDAM_DAM			22		//伤害值
+#define JAPIDAM_UNE			23		//受伤单位
+#define JAPIDAM_UNS			24		//伤害来源
+#define JAPIDAM_ATP			25		//攻击类型
+#define JAPIDAM_DTP			26		//伤害类型
+#define JAPIDAM_WTP			27		//武器类型
+#define JAPIDAM_RNG			28		//远程
+#define JAPIDAM_PHY			29		//物理
+#define JAPIDAM_TRG			30		//触发
+#define JAPIDAM_ATK			31		//攻击
+#define JAPIDAM_Odam		32		//真实初始伤害
+#define JAPIDAM_Suck		33		//吸血量
+#define JAPIDAM_PDOD		34		//无视本次闪避
+#define JAPIDAM_GDZ			35		//格挡值
+#define JAPIDAM_OrigDam		36		//初始伤害
+#define JAPIDAM_ATTACK		37		//普通攻击
+//==========单位属性常量==========
+#define JAPIDAM_HD		1	//通用护盾
+#define JAPIDAM_MFHD	2	//魔法护盾
+#define JAPIDAM_DODGE	3	//闪避概率	%
+#define JAPIDAM_GDGL	4	//格挡概率	%
+#define JAPIDAM_JS		5	//减伤
+#define JAPIDAM_JS_B	6	//减伤		%
+#define JAPIDAM_FBGL	7	//法爆概率	%
+#define JAPIDAM_FBSH	8	//法爆伤害	%
+#define JAPIDAM_WBGL	9	//物爆概率	%
+#define JAPIDAM_WBSH	10	//物爆伤害	%
+#define JAPIDAM_SHJS	11	//伤害加深	%
+#define JAPIDAM_WSJS	12	//物伤加深	%
+#define JAPIDAM_FSJS	13	//法伤加深	%
+#define JAPIDAM_WC_B	14	//物穿		%
+#define JAPIDAM_WC		15	//物穿
+#define JAPIDAM_FC_B	16	//法穿		%
+#define JAPIDAM_FC		17	//法穿
+#define JAPIDAM_MFKX	18	//魔法抗性	[如同护甲的固定数值]
+#define JAPIDAM_WLXX	19	//物理吸血	%
+#define JAPIDAM_FSXX	20	//法术吸血	%
+#define JAPIDAM_ZLXG	21	//治疗效果
+#define JAPIDAM_ZLZF	22	//治疗增幅
+#define JAPIDAM_SMTQ	23	//生命偷取
+#define JAPIDAM_YHPF	24	//硬化皮肤
+#define JAPIDAM_WLHD	25	//物理护盾【未启用】
+//0-99 State 100-199 ATTR
+#define JAPIDAM_ATTR		100		//属性基数 [意味着从100开始]
+#define JAPIDAM_CONS		201		//常量
+
+#define JAPIDAM_Keep		218		//持续时间
+#define JAPIDAM_Timeout		219		//刷新间隔
+//==========事件常量==========
+#define JAPIDAM_EVENT_DAM		1		//接受伤害
+#define JAPIDAM_EVENT_GD		2		//格挡
+#define JAPIDAM_EVENT_Suck		3		//物理/法术吸血
+#define JAPIDAM_EVENT_SMTQ		4		//生命偷取
+#define JAPIDAM_EVENT_DAM_END	5		//伤害处理结束

@@ -1,0 +1,56 @@
+#define width 10 //触发器注册 表跨度
+// //! external ObjectMerger w3a AIsr AtkS anam " 物攻捕捉辅助" isr2 1 2.00  |
+//伤害特性常量
+#define HA_STATE_DODGE 1 //闪避特性
+#define HA_STATE_TRUTH 2 //真实伤害
+#define HA_STATE_FSBJ 7 //法术暴击
+#define HA_STATE_WLBJ 3 //物理暴击
+#define HA_STATE_GD 4 //格挡 
+#define HA_STATE_MFHD 5 //魔法护盾
+#define HA_STATE_HD 6 //护盾
+//单位属性常量
+#define HA_ATTR_HD 1
+#define HA_ATTR_MFHD 2
+#define HA_ATTR_DODGE 3
+#define HA_ATTR_GDGL 4
+#define HA_ATTR_GDJS 5
+#define HA_ATTR_BFBJS 6
+#define HA_ATTR_FBGL 7
+#define HA_ATTR_FBSH 8
+#define HA_ATTR_WBGL 9
+#define HA_ATTR_WBSH 10
+#define HA_ATTR_SHJS 11
+#define HA_ATTR_FSJS 12
+#define HA_ATTR_WSJS 13
+#define HA_ATTR_BFBWC 14
+#define HA_ATTR_GDWC 15
+#define HA_ATTR_BFBFC 16
+#define HA_ATTR_GDFC 17
+#define HA_ATTR_MFKX 18
+#define HA_ATTR_WLXX 19
+#define HA_ATTR_FSXX 20
+#define HA_ATTR_SMTQ 21
+#define HA_ATTR_YHPF 22
+
+
+//0-99 State 100-199 ATTR
+#define HA_PDOD 100000
+#define HA_CONS 200
+#define HA_SIGN 300
+#define HA_DAM  10100
+#define HA_UNE  100200
+#define HA_UNS  100300
+#define HA_ATP  100400
+#define HA_DTP  100500
+#define HA_WTP  100600
+#define HA_RNG  100700
+#define HA_PHY  100800
+#define HA_TRG  100900
+#define HA_ATK  101000
+#define HA_Odam  101100
+#define HA_Suck  101200
+#define HA_OrigDam  101300
+#define HA_Keep  101400
+#define HA_Timeout  101500
+#define HA_ATTACK  101600
+#define HA_NEWUNS  101700

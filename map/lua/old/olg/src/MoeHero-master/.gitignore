@@ -1,0 +1,6 @@
+/resource/
+/sound/
+/map/lua/(ppk).lua
+/tools/rsa/ppk
+/*.w3x
+!/.w3x

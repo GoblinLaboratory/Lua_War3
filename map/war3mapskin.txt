@@ -1,0 +1,2 @@
+[CustomSkin]
+IdlePeon=ReplaceableTextures\CommandButtons\BTNNightElfCaptureFlag.blp

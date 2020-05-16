@@ -1,0 +1,18 @@
+#ifndef TaskConstantIncluded
+#define TaskConstantIncluded
+ 
+ //单位结构
+ #define Task_Owned -1
+ 
+ // 任务结构
+	#define Task_Name  -1 //任务名
+	#define Task_Unit  -2 //接任务的单位
+	#define Task_ID    -3 //唯一索引
+	#define Task_Main  -4 //主线
+	#define Task_State -5 //状态 (完成状态)
+	#define Task_Key   -6 //key
+	
+	
+	#define Task_Demand_Max 1000
+
+#endif

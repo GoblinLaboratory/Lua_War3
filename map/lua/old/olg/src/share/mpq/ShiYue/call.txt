@@ -1,0 +1,79 @@
+[SY_JumpGetDamager]
+title = "血滴跳跃伤害来源"
+description = "伤害来源"
+comment = "血滴特技:获取跳跃完成的伤害来源"
+category = TC_SYTJ
+returns = unit
+
+[SY_JumpGetJumper]
+title = "血滴跳跃者"
+description = "跳跃者"
+comment = "血滴特技:获取跳跃完成的单位"
+category = TC_SYTJ
+returns = unit
+
+[SY_JumpGetIndex]
+title = "血滴跳跃标记值"
+description = "标记值"
+comment = "血滴特技:获取所完成跳跃的特殊标记"
+category = TC_SYTJ
+returns = integer
+
+[SYCharge_GetDamager]
+title = "血滴冲锋伤害来源"
+description = "伤害来源"
+comment = "血滴特技:获取冲锋完毕的伤害者"
+category = TC_SYTJ
+returns = unit
+
+[SYCharge_GetDamaged]
+title = "血滴冲锋受伤单位"
+description = "受伤单位"
+comment = "血滴特技:获取冲锋完毕的受伤单位"
+category = TC_SYTJ
+returns = unit
+
+
+[SYCharge_GetCharger]
+title = "血滴冲锋者"
+description = "冲锋者"
+comment = "血滴特技:获取冲锋完成的单位"
+category = TC_SYTJ
+returns = unit
+
+[SYCharge_GetIndex]
+title = "血滴冲锋标记值"
+description = "标记值"
+comment = "血滴特技:获取所完成冲锋的特殊标记"
+category = TC_SYTJ
+returns = integer
+
+[SYCharge_GetUnUsual]
+title = "血滴冲锋结束方式"
+description = "非正常结束"
+comment = "弑月:可以获取血滴冲锋的结束方式,非正常结束即为因为碰撞而结束.正常结束则是因为距离抵达等."
+category = TC_SYTL
+returns = boolean
+
+[CheckWalk_XY]
+title = "检测坐标可通行性"
+description = "坐标(${X},${Y})可通行"
+comment = "弑月:是某位外国大神做的,个人认为可以完美的判断位置的可通行性"
+category = TC_SYTL
+returns = boolean
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "0.00"
+
+[CheckWalk_Loc]
+title = "检测点可通行性"
+description = "${点}可通行"
+comment = "弑月:是某位外国大神做的,个人认为可以完美的判断位置的可通行性"
+category = TC_SYTL
+returns = boolean
+[[.args]]
+type = location
+default = "GetSpellTargetLoc"

@@ -1,0 +1,1041 @@
+[XG_RandomPool_Create]
+title = "创建新随机池"
+description = "新建随机池"
+comment = "雪月随机池: 返回一个随机池的编号 你可以用它来往池里添加/取出数字"
+category = TC_RandomPool
+returns = integer
+
+[XG_GetElementNum_RandomPool]
+title = "获取随机池元素数量"
+description = "${Pool} 内的元素数量"
+comment = "雪月随机池: 获得随机池内的元素数量"
+category = TC_RandomPool
+returns = integer
+[[.args]]
+type = integer
+default = "XG_RandomPool_Create"
+
+[XG_TakeElement_RandomPool]
+title = "取出随机池元素 "
+description = "取出 ${Pool} 的随机元素"
+comment = "雪月随机池: 这个将会被Ex取代，请尽量不用这个,优先取出比重大的，比重低于下限的将最后取出，无元素会返回0"
+category = TC_RandomPool
+returns = real
+[[.args]]
+type = integer
+default = "XG_RandomPool_Create"
+
+[XG_TakeElement_RandomPool_Ex]
+title = "取出随机池元素 [Ex]"
+description = "从 ${Pool} 内 ${Take} 一个随机元素"
+comment = "雪月随机池: 优先取出比重大的，比重低于下限的将最后取出，无元素会返回0,获取则不会使元素离开池"
+category = TC_RandomPool
+returns = real
+[[.args]]
+type = integer
+default = "XG_RandomPool_Create"
+[[.args]]
+type = HCRandomPoolTake
+default = "HC_RandomPool_Take_False"
+
+[Xg_GetPercentOfReal]
+title = "获取实数百分比"
+description = "${实数}%"
+comment = "雪歌系统: 输入50则等于0.5 [100=1.00] [1=0.01]"
+category = TC_XGA
+returns = real
+[[.args]]
+type = real
+default = "100"
+
+[XG_GetItemData_Cons]
+title = "获取物体数据 [常量]"
+description = "${type} ${Item} 的 ${Data}"
+comment = "雪歌系统: [必须是常量]获取物体数据，在物编里按Ctrl+D查看"
+category = TC_XGA
+returns = string
+[[.args]]
+type = scriptcode
+default = item
+[[.args]]
+type = scriptcode
+default = afac
+[[.args]]
+type = scriptcode
+default = Name
+
+[Xg_ZLsource]
+title = "治疗来源"
+description = "治疗来源"
+comment = "治疗系统:"
+category = TC_XGZHL
+returns = unit
+
+[Xg_ZLunit]
+title = "被治疗的单位"
+description = "被治疗的单位"
+comment = "治疗系统:"
+category = TC_XGZHL
+returns = unit
+
+[Xg_ZLval]
+title = "治疗量"
+description = "治疗量"
+comment = "治疗系统:"
+category = TC_XGZHL
+returns = real
+
+[Xg_ZLForYLB]
+title = "治疗来自医疗波"
+description = "治疗来自医疗波"
+comment = "治疗系统: 判断本次治疗是不是医疗波造成的"
+category = TC_XGZHL
+returns = boolean
+
+[Xg_Get_YLBNum]
+title = "取医疗波总次数"
+description = "医疗波总次数"
+comment = "治疗系统: 获取本次医疗波共弹射几次"
+category = TC_XGZHL
+returns = integer
+
+[Xg_Get_YLB]
+title = "取医疗波弹射计次"
+description = "医疗波计次"
+comment = "治疗系统: 获取本次医疗波的第几次治疗，非医疗波的情况则为0"
+category = TC_XGZHL
+returns = integer
+
+[Xg_SDLsource]
+title = "闪电链来源[XG]"
+description = "闪电链来源"
+comment = "闪电链系统:"
+category = TC_XGSDL
+returns = unit
+
+[Xg_SDLunit]
+title = "闪电链击中的单位[XG]"
+description = "闪电链击中的单位"
+comment = "闪电链系统:"
+category = TC_XGSDL
+returns = unit
+
+[Xg_SDLval]
+title = "闪电链当前伤害值[XG]"
+description = "闪电链伤害"
+comment = "闪电链系统:"
+category = TC_XGSDL
+returns = real
+
+[XG_JapiDam_GetUnitAttribute]
+title = "获取单位属性"
+description = "${单位}的[${属性类型}]"
+comment = "Japi伤害系统: 任意时刻都能获取"
+category = TC_JapiDam
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = XgJapiDamUnitAttr
+default = "XgJapiDamUnitAttr18"
+
+[XG_JapiDam_GetUnit]
+title = "获取伤害相关[单位]"
+description = "${类型}"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = unit
+[[.args]]
+type = XgJapiDamGetUnit
+default = "XgJapiDamGetUnit_UNE"
+
+
+[XG_JapiDam_GetReal]
+title = "获取伤害相关[实数]"
+description = "${类型}"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = real
+[[.args]]
+type = XgJapiDamGetReal
+default = "XgJapiDamGetReal_Damage"
+
+[XG_JapiDam_GetBoolean]
+title = "获取伤害相关[布尔]"
+description = "${类型}"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = boolean
+[[.args]]
+type = XgJapiDamGetBool
+default = "XgJapiDamGetBool_DODGE"
+
+[XG_JapiDam_GetDamSign]
+title = "获取伤害标记"
+description = "Japi伤害标记"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = integer
+
+[XG_JapiDam_GetDamSpecSign]
+title = "获取伤害特殊标记"
+description = "<${标记}>特殊Japi伤害标记"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = string
+[[.args]]
+type = string
+default = "范围伤害"
+
+[XG_JapiDam_GetATP]
+title = "获取攻击类型"
+description = "攻击类型[Japi]"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = attacktype
+
+[XG_JapiDam_GetDTP]
+title = "获取伤害类型"
+description = "伤害类型[Japi]"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = damagetype
+
+[XG_JapiDam_GetWTP]
+title = "获取武器类型"
+description = "武器类型[Japi]"
+comment = "Japi伤害系统: 可在伤害系统运作的任意时刻调用"
+category = TC_JapiDam
+returns = weapontype
+
+[Xg_PointPy]
+title = "点坐标偏移"
+description = "从[${指定点}]向[${方向}]度方向偏移[${距离}]码并限制在[${区域}]内"
+comment = "雪歌系统:"
+category = TC_XGA
+returns = location
+[[.args]]
+type = location
+[[.args]]
+type = degree
+default = "45"
+[[.args]]
+type = real
+default = "256"
+[[.args]]
+type = rect
+
+[Xg_StrColor]
+title = "随机颜色前缀"
+description = "随机颜色"
+comment = "雪歌系统:"
+category = TC_XGA
+returns = string
+
+[Xg_GetObjName]
+title = "取物编对象名称"
+description = "获取[${对象}]的名称"
+comment = "雪歌系统:"
+category = TC_XGA
+returns = string
+[[.args]]
+type = integer
+default = "afac"
+
+[Xg_String_zd]
+title = "取指定内容"
+description = "取指定内容【${完整文本}，${左边文本}，${右边文本}】"
+comment = "雪歌系统:从完整文本中截取左边文本到右边文本之间的文本,例如：取指定内容(作者雪歌酱，作者 ，酱) 最后返回值 = 雪歌"
+category = TC_XGA
+returns = string
+[[.args]]
+type = string
+[[.args]]
+type = string
+[[.args]]
+type = string
+
+[Xg_GetRectItemGroup]
+title = "新建物品组 [区域][条件]"
+description = "从[${区域}]内选取满足条件[${条件}]的物品"
+comment = "物品组系统:"
+category = TC_XGItG
+returns = integer
+[[.args]]
+type = rect
+default = "GetPlayableMapRect"
+[[.args]]
+type = boolexpr
+
+[Xg_ItemDB]
+title = "物品在点范围内"
+description = "${物品} 在点 ${点} 的 ${范围} 范围内"
+comment = "物品栏系统:用'匹配物品'来指代条件中用于比较的物品，'选取物品[Xg]来指代使用'选取物品组做动作'时, 指代相应的物品."
+category = TC_XGItG
+returns = boolean
+[[.args]]
+type = item
+default = "GetFilterItem"
+[[.args]]
+type = location
+[[.args]]
+type = real
+default = "512"
+
+[Xg_GetEnumItem]
+title = "选取物品[XG]"
+description = "选取物品[XG]"
+comment = "物品栏系统:"
+category = TC_XGItG
+returns = item
+
+[Xg_UnitUsedState]
+title = "单位已损失状态"
+description = "${单位} 已损失 ${状态}"
+comment = "雪歌系统:"
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = usedstate
+default = "usedstate1"
+
+[Xg_SpeedA]
+title = "添加自定义减速效果  [百分比]"
+description = "令${单位}[${Type}]【${Speed}】移速,持续${Second}秒 特效[${Model}]绑定在${Body}"
+comment = "减速系统: 返回减速ID 失败返回-1"
+category = TC_XGA
+returns = integer
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = XGFH
+default = "XGFH2"
+[[.args]]
+type = real
+default = "0.3"
+[[.args]]
+type = real
+default = "3.00"
+[[.args]]
+type = modelfile
+default = "\"Abilities\\Spells\\Human\\slow\\slowtarget.mdl\""
+[[.args]]
+type = string
+default = "origin"
+
+[Xg_SpeedB]
+title = "添加自定义减速效果  [指定值]"
+description = "令${单位}[${Type}]【${Speed}】移速,持续${Second}秒 特效[${Model}]绑定在${Body}"
+comment = "减速系统: 返回减速ID 失败返回-1"
+category = TC_XGA
+returns = integer
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = XGFH
+default = "XGFH2"
+[[.args]]
+type = real
+default = "45"
+[[.args]]
+type = real
+default = "3.00"
+[[.args]]
+type = modelfile
+default = "\"Abilities\\Spells\\Human\\slow\\slowtarget.mdl\""
+[[.args]]
+type = string
+default = "origin"
+
+[Xg_IsFitOrId]
+title = "是装备栏的命令ID"
+description = "${order}是装备栏的命令ID"
+comment = "魔法书装备栏:"
+category = TC_XGM
+returns = boolean
+[[.args]]
+type = ordercode
+default = "GetIssuedOrderIdBJ"
+
+[Xg_GetFit]
+title = "获取单位指定类别的装备"
+description = "${单位} 的 ${类别} 装备"
+comment = "魔法书装备栏:如果这个物品被穿戴了请不要尽量删除,避免一些不必要的麻烦"
+category = TC_XGM
+returns = item
+[[.args]]
+type = unit
+default = "GetManipulatingUnit"
+[[.args]]
+type = string
+default = "武器"
+
+[Xg_GetListWithId]
+title = "获取装备类别"
+description = "${order} 的装备类别"
+comment = "魔法书装备栏:通过命令ID获取你绑定的装备类别"
+category = TC_XGM
+returns = string
+[[.args]]
+type = ordercode
+default = "GetIssuedOrderIdBJ"
+
+[Xg_IsMfszblFit]
+title = "是魔法书装备栏系统的装备"
+description = "${装备} 是魔法书装备栏的装备"
+comment = "魔法书装备栏:判断物品是否被添加"
+category = TC_XGM
+returns = boolean
+[[.args]]
+type = itemcode
+default = "rst1"
+[Xg_GetFitList]
+title = "获取装备类别"
+description = "获取 ${装备} 的类别"
+comment = "魔法书装备栏:例如攻击之爪的类别是武器"
+category = TC_XGM
+returns = string
+[[.args]]
+type = itemcode
+default = "GetItemTypeId"
+
+[XG_Int2DamPlusAttr]
+title = "整数 转换为 雪月伤害系统属性"
+description = "${属性}"
+comment = "雪月伤害系统: 一般用来与自动获取属性系统对接"
+category = TC_DamPlus
+returns = DamPlusState
+[[.args]]
+type = integer
+default = "0"
+
+[XG_DamPlusAttr2Int]
+title = "雪月伤害系统属性 转换为 整数"
+description = "${属性}"
+comment = "雪月伤害系统: 一般用来与自动获取属性系统对接"
+category = TC_DamPlus
+returns = integer
+[[.args]]
+type = DamPlusState
+default = "DamPlusState21"
+
+[Xg_DamPlus_GetState]
+title = "判断伤害特性"
+description = "${特性}"
+comment = "雪月伤害系统: 判断一些伤害的基本特性,但是闪避的判定只用在普通攻击里"
+category = TC_DamPlus
+returns = boolean
+[[.args]]
+type = XGDamPlusState
+default = XGDamPlusState8
+
+[Xg_DamPlus_GetATP]
+title = "判断攻击类型"
+description = "攻击类型"
+comment = "雪月伤害系统: 只有触发伤害才能被捕捉到"
+category = TC_DamPlus
+returns = attacktype
+
+[Xg_DamPlus_GetDTP]
+title = "判断伤害类型"
+description = "伤害类型"
+comment = "雪月伤害系统: 只有触发伤害才能被捕捉到"
+category = TC_DamPlus
+returns = damagetype
+
+[Xg_DamPlus_GetWTP]
+title = "判断武器类型"
+description = "武器类型"
+comment = "雪月伤害系统: 只有触发伤害才能被捕捉到"
+category = TC_DamPlus
+returns = weapontype
+
+[Xg_DamPlus_GetDam]
+title = "获取伤害值"
+description = "伤害值"
+comment = "雪月伤害系统: 你可以在伤害系统运作的任意时刻获取它"
+category = TC_DamPlus
+returns = real
+
+
+[Xg_DamPlus_GetOrigDam]
+title = "获取初始伤害值"
+description = "初始伤害值"
+comment = "雪月伤害系统: 你可以在伤害系统运作的任意时刻获取它，获取到最初的伤害值，修改伤害并不会影响它。"
+category = TC_DamPlus
+returns = real
+
+
+[Xg_DamPlus_GetUnitS]
+title = "伤害来源"
+description = "伤害的来源"
+comment = "雪月伤害系统: 你可以在伤害系统运作的任意时刻获取它"
+category = TC_DamPlus
+returns = unit
+
+[Xg_DamPlus_GetUnitE]
+title = "受伤单位"
+description = "受伤的单位"
+comment = "雪月伤害系统: 你可以在伤害系统运作的任意时刻获取它"
+category = TC_DamPlus
+returns = unit
+
+[Xg_DamPlus_GetSign]
+title = "伤害标记值"
+description = "伤害标记值"
+comment = "雪月伤害系统: 你可以在伤害系统运作的任意时刻获取它"
+category = TC_DamPlus
+returns = integer
+
+[Xg_DamPlus_GetAttr]
+title = "获取单位属性"
+description = "${单位}的[${属性}]"
+comment = "雪月伤害系统: "
+category = TC_DamPlus
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = DamPlusState
+default = "DamPlusState21"
+
+[Xg_CountAttrDam]
+title = "计算英雄属性伤害"
+description = "${英雄}的${Slist}力量x${sbl} + ${Alist}敏捷x${abl} + ${Ilist}智力x${ibl}"
+comment = "雪月伤害系统: "
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+default = "null"
+[[.args]]
+type = AttrType
+default = AttrType1
+[[.args]]
+type = real
+default = "0.8"
+[[.args]]
+type = AttrType
+default = AttrType1
+[[.args]]
+type = real
+default = "0.5"
+[[.args]]
+type = AttrType
+default = AttrType1
+[[.args]]
+type = real
+default = "1.2"
+
+[Xg_DamPlus_GetSuck]
+title = "获取吸血量"
+description = "当前吸血量"
+comment = "雪月伤害系统:  获取吸血/生命偷取 都用这个"
+category = TC_DamPlus
+returns = real
+
+[Charge_Get_DamageSource]
+title = "冲锋伤害来源"
+description = "冲锋伤害来源"
+comment = "雪月冲锋系统: 这是你在使用冲锋动作时设置的"
+category = TC_Charge
+returns = unit
+
+[Charge_Get_Source]
+title = "冲锋单位"
+description = "冲锋单位"
+comment = "雪月冲锋系统: 获取正在冲锋的单位"
+category = TC_Charge
+returns = unit
+
+[Charge_Get_Current]
+title = "碰撞单位"
+description = "碰撞单位"
+comment = "雪月冲锋系统: 获取冲锋过程中碰撞到的单位"
+category = TC_Charge
+returns = unit
+
+[Charge_Get_Target]
+title = "冲锋目标"
+description = "冲锋目标"
+comment = "雪月冲锋系统: 获取冲锋的目标单位"
+category = TC_Charge
+returns = unit
+
+[Xg_GetUnitZ]
+title = "获取单位Z轴"
+description = "${unit}的Z轴"
+comment = "雪月系统: 获取单位飞行高度 + 地形高度"
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[GetHeroStat_HC]
+title = "英雄属性"
+description = "${Attribute} 对 ${英雄} (${Include/Exclude} 加成)"
+comment = "雪月团队: 替你省去了转换的步骤"
+category = TC_XGA
+returns = real
+[[.args]]
+type = herostat
+default = "HeroStatStr"
+[[.args]]
+type = unit
+default = "GetSpellAbilityUnit"
+[[.args]]
+type = includeoption
+default = "InclusionExclude"
+
+[GetUnitAbilityLevel_HC]
+title = "单位技能等级 [R]"
+description = "${单位} 的 ${技能} 技能等级"
+comment = "雪月团队: 如果单位没有该技能,则返回0. 你可以用技能等级<=0来判断单位是否拥有这个技能"
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = abilcode
+
+[GetUnitLevel_HC]
+title = "单位/英雄等级 [R]"
+description = "${单位} 的等级"
+comment = "雪月团队: 对于英雄则会返回其英雄等级.替你省去了转换的步骤。"
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[GetHeroStr_HC]
+title = "英雄力量 [R]"
+description = "${英雄} 的力量值(${Include/Exclude} 加成)"
+comment = "雪月团队: 替你省去了转换的步骤"
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+[[.args]]
+type = includeoption
+default = "InclusionExclude"
+
+[GetHeroAgi_HC]
+title = "英雄敏捷 [R]"
+description = "${英雄} 的敏捷值(${Include/Exclude} 加成)"
+comment = "雪月团队: 替你省去了转换的步骤"
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+[[.args]]
+type = includeoption
+default = "InclusionExclude"
+
+[GetHeroInt_HC]
+title = "英雄智力 [R]"
+description = "${英雄} 的智力值(${Include/Exclude} 加成)"
+comment = "雪月团队: 替你省去了转换的步骤"
+category = TC_XGA
+returns = real
+[[.args]]
+type = unit
+[[.args]]
+type = includeoption
+default = "InclusionExclude"
+
+[GetPlayerState_HC]
+title = "玩家属性 [R]"
+description = "${Player} ${Property}"
+comment = "雪月团队: 替你省去了转换的步骤"
+category = TC_XGA
+returns = real
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = playerstate
+default = "PlayerStateGold"
+
+[XG_Task_GetState]
+title = "获取任务状态"
+description = "${u} 状态为 ${t}"
+comment = "雪月团队: "
+category = XG_Task
+returns = boolean
+[[.args]]
+type = XGTaskId
+default = "XG_Task_GetUnitTid"
+[[.args]]
+type = XGTaskState
+default = "XGTaskState_Finish"
+
+[XG_Task_GetUnitTid]
+title = "获取任务ID   [单位]"
+description = "${u}的 ${d} 任务ID"
+comment = "雪月团队: 获取Task ID简称 TID"
+category = XG_Task
+returns = XGTaskId
+[[.args]]
+type = unit
+default = "GetTriggeringUnit"
+[[.args]]
+type = integer
+default = "123"
+
+[XG_Task_GetPlayerTid]
+title = "获取任务ID   [玩家]"
+description = "${u}的 ${d} 任务ID"
+comment = "雪月团队: 获取Task ID简称 TID"
+category = XG_Task
+returns = XGTaskId
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = integer
+default = "123"
+
+[XG_Task_CustomDemand_Get]
+title = "获取任务需求进度"
+description = "${p}的[${d}]进度"
+comment = "雪月团队: 获取任务ID简称 TID"
+category = XG_Task
+returns = real
+[[.args]]
+type = XGTaskId
+default = "XG_Task_GetUnitTid"
+[[.args]]
+type = string
+default = "杀狼"
+
+[XG_GetUnitItemNum]
+title = "获取指定物品数量  [New]"
+description = "${u}的 ${t} 数量"
+comment = "雪月团队: 可配合任务系统使用，0数量的物品当成1"
+category = TC_XGA
+returns = integer
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = itemcode
+default = "rst1"
+
+[XG_RemoveUnitItem]
+title = "删除指定物品数量  [New]"
+description = "删除${u} ${i} x ${t}"
+comment = "雪月团队: 可配合任务系统使用，0数量的物品当成1，不足数量无效并返回假，反之"
+category = TC_XGA
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = itemcode
+default = "rst1"
+[[.args]]
+type = integer
+default = "10"
+
+[XG_GiveUnitItem_GetUnitS]
+title = "物品给予者"
+description = "物品给予者"
+comment = "雪月物品给予事件：这个用于获取该物品来自哪个单位"
+category = TC_XGA
+returns = unit
+
+[XG_GiveUnitItem_GetUnitE]
+title = "物品接受者"
+description = "物品接受者"
+comment = "雪月物品给予事件：这个用于获取该物品给了哪个单位"
+category = TC_XGA
+returns = unit
+
+[XG_GiveUnitItem_GetItem]
+title = "给予的物品"
+description = "给予的物品"
+comment = "雪月物品给予事件：这个用于获取给予的物品"
+category = TC_XGA
+returns = item
+
+[UnitAlive]
+title = "单位是否存活"
+description = "${unit}是存活的"
+comment = "雪月系统：更加精准的获得单位是否存活，主要的是,它是一个魔兽内置函数"
+category = TC_XGA
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[XG_IsUnitInvunerable]
+title = "单位是无敌的"
+description = "${unit}是无敌的"
+comment = "雪月系统：能够判断单位是否是无敌的"
+category = TC_XGA
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[XG_UnitInDegree]
+title = "单位在指定单位的指定角度内"
+description = "${ue}在${us} 的 ${a} -> ${b} 度之间"
+comment = "雪月系统：判断角度 只支持0-360"
+category = TC_XGA
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = degree
+default = "180"
+[[.args]]
+type = degree
+default = "270"
+
+[XG_UnitInUnitFaceDegree]
+title = "单位在指定单位面向的指定角度内"
+description = "${ue}在${us} 面向的 ${a} -> ${b} 度之间"
+comment = "雪月系统：判断 15->15 就是30°范围内了 只支持0-360"
+category = TC_XGA
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = degree
+default = "15"
+[[.args]]
+type = degree
+default = "15"
+
+[XG_PointInPointDegree]
+title = "点在点指定方向的特定范围内"
+description = "${pe}在 [${ps}->${d}方向] 的 ${a} -> ${b} 度之间"
+comment = "雪月系统：判断 15->15 就是30°范围内了 只支持0-360"
+category = TC_XGA
+returns = boolean
+[[.args]]
+type = location
+default = "GetUnitLoc"
+[[.args]]
+type = location
+default = "GetUnitLoc"
+[[.args]]
+type = degree
+default = "45"
+[[.args]]
+type = degree
+default = "15"
+[[.args]]
+type = degree
+default = "15"
+
+[XG_UnitInUnitDegree]
+title = "单位在单位指定方向的特定范围内"
+description = "${pe}在 [${ps}->${d}方向] 的 ${a} -> ${b} 度之间"
+comment = "雪月系统：判断 15->15 就是30°范围内了 只支持0-360"
+category = TC_XGA
+returns = boolean
+[[.args]]
+type = unit
+default = "GetSpellAbilityUnit"
+[[.args]]
+type = unit
+default = "GetSpellAbilityUnit"
+[[.args]]
+type = degree
+default = "45"
+[[.args]]
+type = degree
+default = "15"
+[[.args]]
+type = degree
+default = "15"
+
+[XG_AngelBetweenUnit]
+title = "单位之间的角度 [0-360]"
+description = "${s}到${e}"
+comment = "雪月系统：返回 0-360 °"
+category = TC_XGA
+returns = degree
+[[.args]]
+type = unit
+default = "GetSpellAbilityUnit"
+[[.args]]
+type = unit
+default = "GetSpellAbilityUnit"
+
+[XG_AngelBetweenPoint]
+title = "两点之间的角度 [0-360]"
+description = "${s}[${xs}]到${e}[${xe}]"
+comment = "雪月系统：返回 0-360 °"
+category = TC_XGA
+returns = degree
+[[.args]]
+type = location
+default = "GetUnitLoc"
+[[.args]]
+type = HC_Leak_Rmove
+default = "HC_Leak_Rmove_TRUE"
+[[.args]]
+type = location
+default = "GetUnitLoc"
+[[.args]]
+type = HC_Leak_Rmove
+default = "HC_Leak_Rmove_TRUE"
+
+[XG_GetEnterGame_Unit]
+title = "进入游戏的单位"
+description = "进入游戏的单位"
+comment = "雪月系统：配合任意单位进入游戏事件使用,也可用匹配单位替代"
+category = TC_XGA
+returns = unit
+
+[XG_IsNight]
+title = "当前的游戏时间是夜晚"
+description = "当前是夜晚"
+comment = "雪月系统：判断你游戏的时间是否晚上"
+category = TC_XGA
+returns = boolean
+
+[XG_DistanceDayLight]
+title = "距离天亮时长"
+description = "距离天亮时长"
+comment = "雪月系统：判断还有多久天亮 比如现在是1.00 则返回 4.00 [这取决于你平衡常数的设定]"
+category = TC_XGA
+returns = real
+
+[XG_DistanceNightFalls]
+title = "距离夜幕降临"
+description = "距离夜幕降临时长"
+comment = "雪月系统：判断还有多久天黑 比如现在是15.30 则返回 2.30 [这取决于你平衡常数的设定]"
+category = TC_XGA
+returns = real
+
+[XG_AutoAttr_GetAttrNum]
+title = "获取属性数量"
+description = "${item} 拥有属性数"
+comment = "雪月团队：判断物品有多少种属性"
+category = TC_AutoAttrSys
+returns = integer
+[[.args]]
+type = itemcode
+default = "rst1"
+
+[XG_AutoAttr_GetAttrKey]
+title = "获取属性key"
+description = "${item} 第 ${n} 个属性"
+comment = "雪月团队：读取一个属性key"
+category = TC_AutoAttrSys
+returns = integer
+[[.args]]
+type = itemcode
+default = "rst1"
+[[.args]]
+type = integer
+default = "1"
+
+[XG_AutoAttr_GetAttrVal]
+title = "获取属性值"
+description = "${item} 的 ${n} 值"
+comment = "雪月团队：读取一个属性key中的值"
+category = TC_AutoAttrSys
+returns = real
+[[.args]]
+type = itemcode
+default = "rst1"
+[[.args]]
+type = integer
+default = "1"
+
+[XG_Load_Expression]
+title = "读取表达式"
+description = "#${s}#"
+comment = "雪月团队：从字符串中读取一个表达式"
+category = TC_PreExpression
+returns = XGCondition
+[[.args]]
+type = string
+default = "无敌的单位"
+
+[XG_Normal_Expression]
+title = "普通表达式"
+description = "${____普通表达式____}"
+comment = "雪月团队：通常的条件表达式"
+category = TC_PreExpression
+returns = XGCondition
+[[.args]]
+type = boolexpr
+
+[XG_GetUnitsInRangOfLoc]
+title = "选取[圆范围]内的单位 [点][雪月条件]"
+description = "半径为 ${Radius} 圆心为 ${指定点}[${r}该点] 且满足 ${条件} 的所有单位[${x}条件]"
+comment = "使用'匹配单位'指代条件中用于比较的单位. 普通表达式是的话一定要选排泄条件嗷！会创建单位组。"
+category = TC_XGA
+returns = group
+[[.args]]
+type = real
+default = "512"
+min = 0
+[[.args]]
+type = location
+default = "GetRectCenter"
+[[.args]]
+type = HC_Leak_Rmove
+default = "HC_Leak_Rmove_TRUE"
+[[.args]]
+type = XGCondition
+default = "XG_Load_Expression"
+[[.args]]
+type = HC_Leak_Rmove
+default = "HC_Leak_Rmove_FALSE"
+
+[XG_GetUnitsInRect]
+title = "选取[矩形区域]内的单位 [雪月条件]"
+description = "${rect} 内满足 ${条件} 的所有单位[${x}条件]"
+comment = "使用'匹配单位'指代条件中用于比较的单位. 普通表达式是的话一定要选排泄条件嗷！会创建单位组。"
+category = TC_XGA
+returns = group
+[[.args]]
+type = rect
+default = "GetPlayableMapRect"
+[[.args]]
+type = XGCondition
+default = "XG_Load_Expression"
+[[.args]]
+type = HC_Leak_Rmove
+default = "HC_Leak_Rmove_FALSE"
+
+[XG_GetUnitsInPlayer]
+title = "选取[指定玩家]的单位 [雪月条件]"
+description = "属于 ${player} 内满足 ${条件} 的所有单位[${x}条件]"
+comment = "使用'匹配单位'指代条件中用于比较的单位. 普通表达式是的话一定要选排泄条件嗷！会创建单位组。"
+category = TC_XGA
+returns = group
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = XGCondition
+default = "XG_Load_Expression"
+[[.args]]
+type = HC_Leak_Rmove
+default = "HC_Leak_Rmove_FALSE"

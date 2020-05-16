@@ -1,0 +1,10 @@
+#ifndef SpellBookEquConstantIncluded
+#define SpellBookEquConstantIncluded
+
+	#define SpBk_Attr 0 //属性
+	#define SpBk_Proc 1 //工程
+	#define SpBk_List 3 //类别
+	#define SpBk_IsFit -1 //类别
+
+
+#endif

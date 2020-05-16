@@ -1,0 +1,21 @@
+事件
+    TriggerRegisterPlayerChatEvent
+        预设: Player00
+        常量: 1
+        预设: ChatMatchTypeExact
+条件
+动作
+    CreateNUnitsAtLoc
+        常量: 1
+        常量: Hpal
+        预设: Player01
+        函数: GetRectCenter
+            函数: GetPlayableMapRect
+        预设: RealUnitFacing
+    CreateNUnitsAtLoc
+        常量: 1
+        常量: Ulic
+        预设: Player00
+        函数: GetRectCenter
+            函数: GetPlayableMapRect
+        预设: RealUnitFacing

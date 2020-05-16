@@ -1,0 +1,41 @@
+--触发了剑术
+        if  CJ.GetUnitAbilityLevel(ul, Global:GetId('A008'))>0 and UM:GetUnit(ul).AttackNumber ~= 0 then 
+            if CJ.GetUnitAbilityLevel(u, Global:GetId("A008")) == 1 and UM:GetUnit(ul).AttackNumber <= 3 then
+                if UM:GetUnit(ul).AttackNumber == 3 then
+                    UM:GetUnit(ul).Attributes.AttackSpeed = UM:GetUnit(ul).Attributes.AttackSpeed - 4
+                    UM:GetUnit(ul).AttackNumber = 0
+                else
+                    UM:GetUnit(ul).AttackNumber = UM:GetUnit(ul).AttackNumber + 1 
+                end
+            elseif CJ.GetUnitAbilityLevel(u, Global:GetId("A008")) == 2  and UM:GetUnit(ul).AttackNumber <= 3 then
+                if UM:GetUnit(ul).AttackNumber == 3 then
+                    UM:GetUnit(ul).Attributes.AttackSpeed = UM:GetUnit(ul).Attributes.AttackSpeed - 4
+                    UM:GetUnit(ul).AttackNumber = 0
+                else
+                    UM:GetUnit(ul).AttackNumber = UM:GetUnit(ul).AttackNumber + 1 
+                end
+            elseif CJ.GetUnitAbilityLevel(u, Global:GetId("A008")) == 3  and UM:GetUnit(ul).AttackNumber <= 5 then
+                if UM:GetUnit(ul).AttackNumber == 5 then
+                    UM:GetUnit(ul).Attributes.AttackSpeed = UM:GetUnit(ul).Attributes.AttackSpeed - 4
+                    UM:GetUnit(ul).AttackNumber = 0
+                else
+                    UM:GetUnit(ul).AttackNumber = UM:GetUnit(ul).AttackNumber + 1 
+                end
+            elseif CJ.GetUnitAbilityLevel(u, Global:GetId("A008")) == 4  and UM:GetUnit(ul).AttackNumber <= 3 then
+                if UM:GetUnit(ul).AttackNumber == 3 then
+                    UM:GetUnit(ul).Attributes.AttackSpeed = UM:GetUnit(ul).Attributes.AttackSpeed - 4
+                    UM:GetUnit(ul).AttackNumber = 0
+                else
+                    UM:GetUnit(ul).AttackNumber = UM:GetUnit(ul).AttackNumber + 1 
+                end
+            end
+        end
+
+
+        if CJ.GetUnitAbilityLevel(ul, Global:GetId('A008'))>0 and UM:GetUnit(ul).AttackNumber == 0 then 
+            local Rn = math.random(1,100)
+                    if Rn >20 then
+                        UM:GetUnit(ul).Attributes.AttackSpeed = UM:GetUnit(ul).Attributes.AttackSpeed + 4
+                        UM:GetUnit(ul).AttackNumber == 1
+                    end
+        end

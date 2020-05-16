@@ -1,0 +1,12 @@
+#ifndef XuanYunUnitConstantIncluded
+#define XuanYunUnitConstantIncluded
+
+	#define XuanYun_Time 84873166 //哈希值（眩晕Time）
+	#define XuanYun_Timer -1944308477 //哈希值（眩晕Timer）
+	#define XuanYun_Unit -1861449520 //哈希值（眩晕Unit）
+	#define XuanYun_System -1415400806 //哈希值（自定义眩晕系统）
+	#define XuanYun_Vest -583201805 //哈希值（眩晕马甲）
+	#define XuanYun_Skill -5211978 //哈希值（眩晕技能）
+	#define XuanYun_BUFF 576850223 //哈希值（眩晕BUFF）
+	
+#endif

@@ -1,0 +1,217 @@
+﻿[DzAPI_Map_IsRedVIP]
+title="判断玩家是否是红V"
+description = "${玩家} 是红V"
+comment = "雪月团队：http://war3xy.top"
+category = TC_DZAPI
+returns = boolean
+[[.args]]
+type = player
+default = "Player00"
+
+[DzAPI_Map_IsBlueVIP]
+title="判断玩家是否是蓝V"
+description = "${玩家} 是蓝V"
+comment = "雪月团队：http://war3xy.top"
+category = TC_DZAPI
+returns = boolean
+[[.args]]
+type = player
+default = "Player00"
+
+[DzAPI_Map_GetGuildName]
+title="获取玩家所在公会名称"
+description = "${玩家} 所在公会名称"
+comment = "雪月团队："
+category = TC_DZAPI
+returns = string
+[[.args]]
+type = player
+default = "Player00"
+
+[DzAPI_Map_GetGuildRole]
+title="获取玩家在公会的职责"
+description = "${玩家} 的公会职责"
+comment = "雪月团队：获取公会职责 Member=10 Admin=20 Leader=30"
+category = TC_DZAPI
+returns = integer
+[[.args]]
+type = player
+default = "Player00"
+
+[DzAPI_Map_GetMapLevel]
+title="获取玩家地图等级"
+description = "${玩家} 的地图等级"
+comment = "雪月团队：获取玩家地图等级【RPG大厅限定】"
+category = TC_DZAPI
+returns = integer
+[[.args]]
+type = player
+default = "Player00"
+
+[DzAPI_Map_GetMapLevelRank]
+title="获取玩家地图等级排行"
+description = "${玩家} 的地图等级排行"
+comment = "雪月团队：获取玩家地图等级排行"
+category = TC_DZAPI
+returns = integer
+[[.args]]
+type = player
+default = "Player00"
+
+[DzAPI_Map_GetMatchType]
+title="获取天梯匹配模式"
+description = "天梯匹配模式"
+comment = "雪月团队：匹配模式为大于1000的整数,具体值需的跟作者之家的模式设置相同"
+category = TC_DZAPI
+returns = integer
+
+[DzAPI_Map_IsRPGLadder]
+title="判断是否在RPG天梯"
+description = "地图来自RPG天梯"
+comment = "雪月团队：来自RPG天梯地图会返回TRUE"
+category = TC_DZAPI
+returns = boolean
+
+[DzAPI_Map_IsRPGLobby]
+title="判断当前地图是否rpg大厅来的"
+description = "地图来自RPG大厅"
+comment = "雪月团队：来自RPG大厅地图会返回TRUE"
+category = TC_DZAPI
+returns = boolean
+
+[zAPI_Map_IsRPGLadder]
+title="判断是否在RPG天梯"
+description = "该地图在RPG天梯"
+comment = "雪月团队：没有注释。我也不知道什么意思"
+category = TC_DZAPI
+returns = boolean
+
+[DzAPI_Map_GetMapConfig]
+title="获取全局服务器存档值 [New]"
+description = "获取全局存档名称: ${key} 里存储的字符串"
+comment = "雪月团队："
+category = TC_DZAPI
+returns = string
+[[.args]]
+type = string
+default = "积分"
+
+[GetPlayerServerValueSuccess]
+title="读取玩家服务器存档成功 [New]"
+description = "获取 ${whichPlayer} 服务器存档成功"
+comment = "雪月团队：如果返回false代表读取失败,反之成功,之后游戏里平台不会再发送“服务器保存失败”的信息，所以希望地图作者在游戏开始给玩家发下信息服务器存档是否正确读取。"
+category = TC_DZAPI
+returns = string
+[[.args]]
+type = player
+default = "Player00"
+[DzAPI_Map_GetGameStartTime]
+title="获取当前游戏时间 "
+description = "Dz游戏时间"
+comment = "雪月团队：从创建到当前的游戏时间，并换算为时间戳"
+category = TC_DZAPI
+returns = integer
+
+[DzAPI_Map_GetStoredInteger]
+title="获取服务器存储的整数"
+description = "从[${玩家}]的[${key}]读取整数"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+returns = integer
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "积分"
+
+[DzAPI_Map_GetStoredReal]
+title="获取服务器存储的实数"
+description = "从[${玩家}]的[${key}]读取实数"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”R”"
+category = TC_DZAPI
+returns = real
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "积分"
+
+[DzAPI_Map_GetStoredBoolean]
+title="获取服务器存储的布尔值"
+description = "从[${玩家}]的[${key}]读取布尔值"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”B”"
+category = TC_DZAPI
+returns = boolean
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "是VIP"
+
+[DzAPI_Map_GetServerValue]
+title="获取服务器存储的数据 [原接口]"
+description = "从[${玩家}]的[${key}]读取数据"
+comment = "雪月团队：在前面加上对应的代号存储对应的整数 实数 字符串 布尔值"
+category = TC_DZAPI
+returns = string
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "个性签名"
+
+[DzAPI_Map_GetStoredString]
+title="获取服务器存储的字符串"
+description = "从[${玩家}]的[${key}]读取字符串"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”S”"
+category = TC_DZAPI
+returns = string
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "个性签名"
+
+[DzAPI_Map_GetStoredUnitId]
+title="获取服务器存储的单位类型"
+description = "从[${玩家}]的[${key}]读取单位类型"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+returns = unitcode
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "单通英雄"
+
+[DzAPI_Map_GetStoredAbilityId]
+title="获取服务器存储的技能类型"
+description = "从[${玩家}]的[${key}]读取技能类型"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+returns = abilcode
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "成名绝技"
+
+[DzAPI_Map_GetStoredItemId]
+title="获取服务器存储的物品类型"
+description = "从[${玩家}]的[${key}]读取物品类型"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+returns = itemcode
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "专属武器"

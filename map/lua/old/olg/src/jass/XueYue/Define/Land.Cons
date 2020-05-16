@@ -1,0 +1,16 @@
+#ifndef LandConstantIncluded
+#define LandConstantIncluded
+
+	#define Land_Cland -2
+	#define Land_Sland -1
+	#define Land_X 0
+	#define Land_Y 300
+	#define Land_MinX 600
+	#define Land_MinY 900
+	#define Land_MaxX 1200
+	#define Land_MaxY 1500
+	
+	
+	#define Land_LongMax 5000 //50*100
+	#define Land_WideMax 5000 //50*100 直接写值或者括号(50*100)
+#endif

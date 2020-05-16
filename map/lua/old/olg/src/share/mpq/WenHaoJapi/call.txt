@@ -1,0 +1,521 @@
+﻿[EXGetTrackableX]
+title = "获取可追踪物X轴"
+description = "${trackable} X轴"
+comment = "雪月团队: "
+category = XG_WenHaoJapi
+returns = boolean
+[[.args]]
+type = trackable
+
+[EXGetTrackableY]
+title = "获取可追踪物Y轴"
+description = "${trackable} Y轴"
+comment = "雪月团队: "
+category = XG_WenHaoJapi
+returns = boolean
+[[.args]]
+type = trackable
+
+[GetMapName]
+title = "获取地图名字   [New]"
+description = "地图名称"
+comment = "雪月团队: 1.33版本更新"
+category = XG_WenHaoJapi
+returns = string
+
+[XG_GetGameVersion]
+title = "获取魔兽版本"
+description = "魔兽版本为 ${ver}"
+comment = "雪月团队: "
+category = XG_WenHaoJapi
+returns = boolean
+[[.args]]
+type = WenHaoWar3Ver
+default = "WenHaoWar3Ver_124e"
+
+[GetPluginVersion]
+title = "获取插件版本"
+description = "插件版本"
+comment = "雪月团队: 内置Japi的版本"
+category = XG_WenHaolJapi
+returns = string
+
+[GetMouseX]
+title = "获取鼠标在地图的X轴"
+description = "获取鼠标所在X轴"
+comment = "雪月团队: 坐标对应的是地图的坐标"
+category = XG_WenHaoLocalJapi
+returns = real
+
+[GetMouseY]
+title = "获取鼠标在地图的Y轴"
+description = "获取鼠标所在Y轴"
+comment = "雪月团队: 坐标对应的是地图的坐标"
+category = XG_WenHaoLocalJapi
+returns = real
+
+[GetPlayerSelectedUnit]
+title = "获取玩家当前选择的单位"
+description = "${玩家}选择的单位"
+comment = "雪月团队: "
+category = XG_WenHaoLocalJapi
+returns = unit
+[[.args]]
+type = player
+default = "Player00"
+
+[GetTargetUnit]
+title = "获取玩家当前鼠标指向的单位"
+description = "本地玩家鼠标指向的单位"
+comment = "雪月团队: "
+category = XG_WenHaoLocalJapi
+returns = unit
+
+[GetTargetItem]
+title = "获取玩家当前鼠标指向的物品"
+description = "本地玩家鼠标指向的物品"
+comment = "雪月团队: "
+category = XG_WenHaoLocalJapi
+returns = item
+
+[GetTargetDestructable]
+title = "获取玩家当前鼠标指向的可破坏物"
+description = "本地玩家鼠标指向的可破坏物"
+comment = "雪月团队: "
+category = XG_WenHaoLocalJapi
+returns = destructable
+
+[GetFps]
+title = "获取当前魔兽FPS"
+description = "当前魔兽FPS"
+comment = "雪月团队: 即魔兽的帧数"
+category = XG_WenHaoLocalJapi
+returns = real
+
+[GetChatState]
+title = "获取聊天状态"
+description = "当前聊天状态"
+comment = "雪月团队: 有输入框的情况返回TRUE，反之。可通过D3D模拟按下ESC或ENTER来禁止玩家聊天"
+category = XG_WenHaoLocalJapi
+returns = boolean
+
+[GetMouseVectorX]
+title = "获取鼠标在屏幕的X轴"
+description = "鼠标在屏幕的X轴"
+comment = "雪月团队: 这个是相对屏幕的，而不是地图的坐标"
+category = XG_WenHaoD3D
+returns = real
+
+[GetMouseVectorY]
+title = "获取鼠标在屏幕的Y轴"
+description = "鼠标在屏幕的Y轴"
+comment = "雪月团队: 这个是相对屏幕的，而不是地图的坐标"
+category = XG_WenHaoD3D
+returns = real
+
+[GetWindowWidth]
+title = "获取魔兽窗口宽度"
+description = "魔兽窗口宽度"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+
+[GetWindowHeight]
+title = "获取魔兽窗口高度"
+description = "魔兽窗口高度"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+
+[Hex]
+title = "10转16进制"
+description = "${x}的16进制"
+comment = "雪月团队: 由于整数无法表示ABCDEF所以需要返回字符串 10 == A"
+category = XG_WenHaoD3D
+returns = string
+[[.args]]
+type = integer
+default = "100"
+
+[CreateFont]
+title = "创建字体"
+description = "创建字体"
+comment = "雪月团队: 返回字体句柄"
+category = XG_WenHaoD3D
+returns = integer
+
+[GetFontWidth]
+title = "获取字体宽度"
+description = "字体: ${hwnd} 的宽度"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default = "100000"
+
+[GetFontHeight]
+title = "获取字体高度"
+description = "字体: ${hwnd} 的高度"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default = "100000"
+
+[GetFontWeight]
+title = "获取字体粗细"
+description = "字体: ${hwnd} 的粗细"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default = "100000"
+
+[GetFontFaceName]
+title = "获取字体类型"
+description = "字体: ${hwnd} 的类型"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = string
+[[.args]]
+type = integer
+default = "100000"
+
+[CreateText]
+title = "创建文本"
+description = "新建文本 字体:${hwnd} 内容:${text} 在(${x},${y}) 生命周期:${time} ARGB:${color}"
+comment = "雪月团队: 返回文字的句柄"
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default = "100000"
+[[.args]]
+type = string
+default = "问号 内置Japi 1.32"
+[[.args]]
+type = real
+default = "400"
+[[.args]]
+type = real
+default = "300"
+[[.args]]
+type = real
+default = "2.5"
+[[.args]]
+type = integer
+default = "0"
+
+[GetTextString]
+title = "获取文本内容"
+description = "文本: ${hwnd} 的内容"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = string
+[[.args]]
+type = integer
+default = "1111111"
+
+[GetTextX]
+title = "获取文本X轴"
+description = "文本: ${hwnd} 的X轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default = "1111111"
+
+[GetTextY]
+title = "获取文本Y轴"
+description = "文本: ${hwnd} 的Y轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default = "1111111"
+
+[GetTextTime]
+title = "获取文本剩余生命周期"
+description = "文本: ${hwnd} 的剩余生命周期"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default = "1111111"
+
+[GetTextColor]
+title = "获取文本颜色"
+description = "文本: ${hwnd} 的颜色"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default = "1111111"
+
+[CreateTexture]
+title = "新建图像"
+description = "新建图像 ${img} 在 (${x},${y}) 宽度:${w} 高度:${h} ARGB:${color} 层次:${lv}"
+comment = "雪月团队: x,y,宽度,高度均相对魔兽窗口 层次越高越上层 返回图像句柄"
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = string
+default = "ReplaceableTextures\\Splats\\AuraRune9b.blp"
+[[.args]]
+type = real
+default = "200"
+[[.args]]
+type = real
+default = "100"
+[[.args]]
+type = real
+default = "64"
+[[.args]]
+type = real
+default = "64"
+[[.args]]
+type = integer
+default = "0"
+[[.args]]
+type = integer
+default = "9"
+
+[GetTextureX]
+title = "获取图像X轴"
+description = "图像:${img} 的X轴"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureY]
+title = "获取图像Y轴"
+description = "图像:${img} 的Y轴"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureWidth]
+title = "获取图像宽度"
+description = "图像:${img} 的宽度"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureHeight]
+title = "获取图像高度"
+description = "图像:${img} 的高度"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureColor]
+title = "获取图像颜色"
+description = "图像:${img} 的颜色"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureLevel]
+title = "获取图像层次"
+description = "图像:${img} 的层次"
+comment = "雪月团队: 层次越高显示得越上层"
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureRotation]
+title = "获取图像旋转角度"
+description = "图像:${img} 的旋转角度"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = degree
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTexturePixelWidth]
+title = "获取图像的图片宽度"
+description = "图像:${img} 的图片宽度"
+comment = "雪月团队: 针对图片本身，而不是你创建的尺寸"
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTexturePixelHeight]
+title = "获取图像的图片高度"
+description = "图像:${img} 的图片高度"
+comment = "雪月团队: 针对图片本身，而不是你创建的尺寸"
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureSrcRect]
+title = "获取图像切割区域"
+description = "图像:${img} 的切割区域"
+comment = "雪月团队: 默认为完整的图形区域，会创建矩形区域，需手动排泄"
+category = XG_WenHaoD3D
+returns = rect
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureCenterX]
+title = "获取图像中心点X轴"
+description = "图像:${img} 的中心点X轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureCenterY]
+title = "获取图像中心点Y轴"
+description = "图像:${img} 的中心点Y轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureMinX]
+title = "获取图像左下点X轴"
+description = "图像:${img} 的左下点X轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureMinY]
+title = "获取图像左下点Y轴"
+description = "图像:${img} 的左下点Y轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureMaxX]
+title = "获取图像右上点X轴"
+description = "图像:${img} 的右上点X轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTextureMaxY]
+title = "获取图像右上点Y轴"
+description = "图像:${img} 的右上点Y轴"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+[[.args]]
+type = integer
+default ="234567"
+
+[GetTriggerKeyboard]
+title = "获取响应的[按键]"
+description = "获取响应的[按键]"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+
+[XG_whJapi_ConvertKeyboard]
+title = "转换按键为整数"
+description = "${按键}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = WenHaoD3dKey
+default = WenHaoD3dKey_A
+
+[XG_whJapi_ConvertColor]
+title = "转换颜色为整数"
+description = "透明:${Alpha} RGB(${R},${G},${B})"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+
+[GetTriggerTexture]
+title = "获取响应的[图像]"
+description = "获取响应的[图像]"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = integer
+
+[GetTriggerKeyboardAction]
+title = "获取响应的[按键状态]"
+description = "获取响应的[按键状态]"
+comment = "雪月团队: TRUE为按下 FALSE为松开，对于鼠标移动 TRUE是进入 FALSE是移出"
+category = XG_WenHaoD3D
+returns = boolean
+
+[GetLittleMapX]
+title = "获取小地图图形位置X轴向量"
+description = "小地图图形位置X轴向量"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+
+[GetLittleMapY]
+title = "获取小地图图形位置Y轴向量"
+description = "小地图图形位置Y轴向量"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+returns = real
+

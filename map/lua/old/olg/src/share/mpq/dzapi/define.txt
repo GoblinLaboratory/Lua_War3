@@ -1,0 +1,2 @@
+﻿[TriggerCategories]
+TC_DZAPI=网易[DzAPI],ReplaceableTextures\CommandButtons\BTNSpellBreaker.blp

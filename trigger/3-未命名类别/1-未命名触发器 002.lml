@@ -1,0 +1,7 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventSpellCast
+条件
+动作
+    DestroyTimer
+        预设: bj_lastStartedTimer

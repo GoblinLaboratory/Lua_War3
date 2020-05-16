@@ -1,0 +1,1700 @@
+[LeakMonitor]
+title = "简易泄露检测"
+description = "显示泄露信息"
+comment = "雪月系统: 对玩家1 简易的显示点、特效、单位组、区域、玩家组泄露"
+category = TC_XGA
+
+[CreateLeakMonitorReport]
+title = "创建泄露检测报告"
+description = "显示泄露检测报告"
+comment = "雪月系统: "
+category = TC_XGA
+
+[TextTagChange]
+title = "字符串设置"
+description = "设置${TextTag}的X轴速率:${real},Y轴速率,${real},消逝时间${real},删除时间${real}"
+comment = "弑月: 对部分有用的功能进行了整理，设置永久性的于本人来看，觉得没用。速率为游戏中的1:1800！"
+category = TC_XGA
+[[.args]]
+type = texttag
+default = "GetLastCreatedTextTag"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "0.03"
+[[.args]]
+type = real
+default = "1.00"
+[[.args]]
+type = real
+default = "3.00"
+
+[XG_AddLoopInt_RandomPool]
+title = "向随机池内添加循环整数元素"
+description = "向 ${Pool} 随机池 循环添加-> ${min} 到 ${max} 比重-> ${f}"
+comment = "雪月随机池: 循环数前面可以比后面大 比重范围0.01 - 1.00 ，比重小于下限的会留到最后，然后才能取出他们"
+category = TC_RandomPool
+[[.args]]
+type = integer
+default = "XG_RandomPool_Create"
+[[.args]]
+type = integer
+default = "1"
+[[.args]]
+type = integer
+default = "10"
+[[.args]]
+type = real
+default = "1.00"
+min = 0.00
+max = 1.00
+
+[XG_AddElement_RandomPool]
+title = "向随机池内添加元素"
+description = "向 ${Pool} 随机池 添加-> ${element} 比重-> ${f}"
+comment = "雪月随机池: 比重范围0.01 - 1.00 ，比重小于下限的会留到最后，然后才能取出他们"
+category = TC_RandomPool
+[[.args]]
+type = integer
+default = "XG_RandomPool_Create"
+[[.args]]
+type = real
+default = "5.00"
+[[.args]]
+type = real
+default = "1.00"
+min = 0.00
+max = 1.00
+
+[XG_Destroy_RandomPool]
+title = "销毁随机池"
+description = "销毁 ${Pool} 随机池"
+comment = "雪月随机池: 随机池占用资源极少，不再使用时可用此动作销毁"
+category = TC_RandomPool
+[[.args]]
+type = integer
+default = "XG_RandomPool_Create"
+
+[Xg_ZhiLiao]
+title = "治疗指定单位"
+description = "令 ${Unit} 治疗 ${Unit} ${Value} 生命值"
+comment = "治疗系统:"
+category = TC_XGZHL
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "0.00"
+
+[Xg_setZLval]
+title = "设置治疗量"
+description = "修改[治疗量]为${数值}"
+comment = "治疗系统:"
+category = TC_XGZHL
+[[.args]]
+type = real
+default = "0.00"
+
+[Xg_YLB]
+title = 施放医疗波
+description = "令${US}对${UE}施放医疗波:治疗递减[${VA}],弹射次数[${VB}],治疗量[${VC}],弹射范围[${VD}],重复弹射[${bool}],主链[${ligM}],次链[${ligF}]"
+comment = "治疗系统:模拟一道医疗波，方便捕捉"
+category = TC_XGZHL
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "-0.12"
+[[.args]]
+type = integer
+default = "9"
+[[.args]]
+type = real
+default = "100.00"
+[[.args]]
+type = real
+default = "600.00"
+[[.args]]
+type = boolean
+default = "true"
+[[.args]]
+type = lightningtype
+default = "LightningTypeHWPB"
+[[.args]]
+type = lightningtype
+default = "LightningTypeHWSB"
+
+[XG_JapiDam_ON]
+title = "启动伤害系统  [JAPI]"
+description = "启动伤害系统 [JAPI]"
+comment = "Japi伤害系统: Japi只有11平台支持或者内置Japi，使用Japi伤害系统必须初始化一次"
+category = TC_JapiDam
+
+[XG_JapiDam_SetUnitAttribute]
+title = "设置单位属性 [JAPI]"
+description = "设置${单位}的[${属性类型}] = ${数值}"
+comment = "Japi伤害系统:"
+category = TC_JapiDam
+[[.args]]
+type = unit
+[[.args]]
+type = XgJapiDamUnitAttr
+default = XgJapiDamUnitAttr18
+[[.args]]
+type = real
+default = "0.00"
+
+[XG_JapiDam_SetReal]
+title = "设置伤害相关实数 [JAPI]"
+description = "设置 ${类型} ＝ ${值}"
+comment = "Japi伤害系统: "
+category = TC_JapiDam
+[[.args]]
+type = XgJapiDamSetReal
+default = "XgJapiDamSetReal_Damage"
+[[.args]]
+type = real
+default = "0.00"
+
+[XG_JapiDam_SetBoolean]
+title = "设置伤害相关布尔值 [JAPI]"
+description = "设置 ${类型} ＝ ${值}"
+comment = "Japi伤害系统:"
+category = TC_JapiDam
+[[.args]]
+type = XgJapiDamSetBool
+default = "XgJapiDamSetBool_PDOD"
+[[.args]]
+type = boolean
+default = "true"
+
+[XG_JapiDam_SetArInt]
+title = "设置系统常量 [JAPI]"
+description = "设置 >${属性类型}< 为 ${数值}"
+comment = "Japi伤害系统: 闪避/格挡上限在启动系统时会自动设置为1 抗性因子则是0.06"
+category = TC_JapiDam
+[[.args]]
+type = XgJapiDamArIntType
+default = XgJapiDamArIntType0
+[[.args]]
+type = real
+default = "0.06"
+
+[XG_JapiDam_DamTar]
+title = "对目标造成伤害 [JAPI]"
+description = "令[${单位s}]对[${单位e}]造成[${伤害}]点伤害,攻击伤害[${攻击伤害}],远程[${远程}],攻击类型[${攻击类型}],伤害类型[${伤害类型}],武器类型[${武器类型}]"
+comment = "伤害系统:接受伤害时要接着再造成伤害就用这个代替吧，否则会有BUG的，导致后面的触发器混乱"
+category = TC_JapiDam
+[[.args]]
+type = unit
+default = "XG_JapiDam_GetUnit"
+[[.args]]
+type = unit
+default = "XG_JapiDam_GetUnit"
+[[.args]]
+type = real
+default = "100"
+[[.args]]
+type = boolean
+default = "false"
+[[.args]]
+type = boolean
+default = "false"
+[[.args]]
+type = XgJapiDamAtkType
+default = "XgJapiDamAtkType2"
+[[.args]]
+type = XgJapiDamDamType
+default = "XgJapiDamDamType3"
+[[.args]]
+type = XgJapiDamWeaType
+default = "XgJapiDamWeaType1"
+
+[XG_JapiDam_SetDamSign]
+title = "标记伤害 [JAPI]"
+description = "为下一次伤害标记为  ${标记}"
+comment = "Japi伤害系统: 在即将要用触发器造成伤害之前使用"
+category = TC_JapiDam
+[[.args]]
+type = integer
+default = "0"
+
+[XG_JapiDam_SetDamSpecSign]
+title = "伤害特殊标记"
+description = "标记下一次伤害的<${类型}>标记为<${标记}>"
+comment = "Japi伤害系统: 在即将要用触发器造成伤害之前使用"
+category = TC_JapiDam
+[[.args]]
+type = string
+default = "范围伤害"
+[[.args]]
+type = string
+default = "真"
+
+[Xg_SDL]
+title = "施放闪电链[模拟]"
+description = "令 ${单位S} 对 ${单位E} 施放闪电链 ：伤害递减->${递减} 弹射次数->${弹射次数} 伤害->${伤害} 弹射范围->${射程} 弹射友军->${弹友军} 可重复弹射->${重复弹射} 主链[${主链}] 次链[${次链}]"
+comment = "闪电链系统:模拟一道闪电链方便你捕捉判断"
+category = TC_XGSDL
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "-0.12"
+[[.args]]
+type = integer
+default = "9"
+[[.args]]
+type = real
+default = "100.00"
+[[.args]]
+type = real
+default = "600.00"
+[[.args]]
+type = boolean
+default = "true"
+[[.args]]
+type = boolean
+default = "true"
+[[.args]]
+type = lightningtype
+default = "LightningTypeCLPB"
+[[.args]]
+type = lightningtype
+default = "LightningTypeCLSB"
+
+[Xg_setSDLval]
+title = "设置闪电链伤害"
+description = "修改本次闪电链伤害为 ${数值}"
+comment = "闪电链系统:响应[任意单位被闪电链击中]事件,只修改本次伤害,不影响原伤害值"
+category = TC_XGSDL
+[[.args]]
+type = real
+default = "0.00"
+
+[Xg_XuanYun_Init]
+title = "自定义眩晕 - 初始化"
+description = "初始化 马甲[${马甲}] 技能[${0秒风暴之锤}] BUFF[${眩晕BUFF}]"
+comment = "雪歌系统: 马甲施法0前摇，风暴之锤目标允许为友军"
+category = TC_XGA
+[[.args]]
+type = unitcode
+default = "hpea"
+[[.args]]
+type = abilcode
+default = "AHtb"
+[[.args]]
+type = buffcode
+default = "BPSE"
+
+[XG_XuanYunUnit_New]
+title = "自定义眩晕 - 眩晕单位  [New]"
+description = "自定义眩晕 ${单位} ${X}秒[${叠加}]"
+comment = "雪月自定义眩晕: 使用前请先初始化一次"
+category = TC_XGA
+[[.args]]
+type = unit
+[[.args]]
+type = real
+default = "1.00"
+[[.args]]
+type = HC_Stack
+default = "HC_Stack_TRUE"
+
+[XG_PauseUnitWithTimer_New]
+title = "计时器暂停单位  [New]"
+description = "暂停 ${单位}  ${X}秒[${叠加}]"
+comment = "雪月暂停单位: "
+category = TC_XGA
+[[.args]]
+type = unit
+[[.args]]
+type = real
+default = "4.00"
+[[.args]]
+type = HC_Stack
+default = "HC_Stack_TRUE"
+
+[Xg_Land_Change_Plus]
+title = "替换区域内的地形"
+description = "把 ${区域} 内的 ${地形A} 全部替换为 ${地形B}"
+comment = "雪月团队: 现在已经支持连续替换了，但是替换大区域仍然需要点时间......"
+category = TC_XGA
+[[.args]]
+type = rect
+[[.args]]
+type = terraintype
+default = "Ldrt"
+[[.args]]
+type = terraintype
+default = "Isnw"
+
+[SetUnitXY_HC]
+title = "设置单位X,Y轴坐标"
+description = "设置 ${单位}XY轴坐标为 ${x},${y}"
+comment = "雪月团队: "
+category = TC_XGA
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "0.00"
+
+[XG_Task_SetState]
+title = "设置任务状态"
+description = "设置 ${u} 状态为 ${t}"
+comment = "雪月团队: "
+category = XG_Task
+[[.args]]
+type = XGTaskId
+default = "XG_Task_GetUnitTid"
+[[.args]]
+type = XGTaskState
+default = "XGTaskState_Finish"
+
+[XG_Task_Logout]
+title = "注销任务"
+description = "注销任务 ${t}"
+comment = "雪月团队: "
+category = XG_Task
+[[.args]]
+type = XGTaskId
+default = "XG_Task_GetUnitTid"
+
+[XG_ReleaseTask_Player]
+title = "发布任务   [玩家]"
+description = "发布玩家任务 ${t} 给 ${p} 任务名：${s}"
+comment = "雪月团队: 同标识算一个任务"
+category = XG_Task
+[[.args]]
+type = integer
+default = "123"
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = string
+default = "新手杀狼任务"
+
+[XG_ReleaseTask_Unit]
+title = "发布任务   [单位]"
+description = "发布单位任务 ${t} 给 ${p} 任务名：${s}"
+comment = "雪月团队: 同标识算一个任务"
+category = XG_Task
+[[.args]]
+type = integer
+default = "123"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = string
+default = "新手杀狼任务"
+
+[XG_Task_CustomDemand_Set]
+title = "设置任务需求进度"
+description = "设置 ${t} 的 ${p} 进度：${s}"
+comment = "雪月团队: 同标识算一个任务"
+category = XG_Task
+[[.args]]
+type = XGTaskId
+default = "XG_Task_GetUnitTid"
+[[.args]]
+type = string
+default = "杀狼"
+[[.args]]
+type = real
+default = "10"
+
+[XG_Task_CustomDemand_Add]
+title = "增加任务需求进度"
+description = "设置 ${t} 的 ${p} 进度 ${f} ${s}"
+comment = "雪月团队: 同标识算一个任务"
+category = XG_Task
+[[.args]]
+type = XGTaskId
+default = "XG_Task_GetUnitTid"
+[[.args]]
+type = string
+default = "杀狼"
+[[.args]]
+type = HC_Add_Reduce
+default = "HC_Add"
+[[.args]]
+type = real
+default = "10"
+
+[XG_RemoveUnitItem_Action]
+title = "删除指定物品数量  [New]"
+description = "删除${u} ${i} x ${t}"
+comment = "雪月团队: 可配合任务系统使用，0数量的物品当成1"
+category = XG_Task
+script_name = XG_RemoveUnitItem
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = itemcode
+default = "rst1"
+[[.args]]
+type = integer
+default = "10"
+
+[XG_RestSkillCD]
+title = "重置单位单个技能冷却"
+description = "重置 ${单位} 的 ${技能} 冷却"
+comment = "雪月团队: 如果单位没有这个技能则无效"
+category = TC_XGA
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = abilcode
+default = "AHwe"
+
+[XG_CreateUnitAtLocEx]
+title = "创建单位到点并添加技能"
+description = "为 ${玩家} 创建一个 ${单位} 在 ${点} [${排泄}该点] 面向:${角度} 并添加 ${x} 级 ${技能}"
+comment = "雪月团队: 可以被最后创建的单位捕捉到"
+category = TC_XGA
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = unitcode
+default = "hpea"
+[[.args]]
+type = location
+default = "GetUnitLoc"
+[[.args]]
+type = HC_Leak_Rmove
+default = "HC_Leak_Rmove_TRUE"
+[[.args]]
+type = real
+default = "270"
+[[.args]]
+type = integer
+default = "1"
+[[.args]]
+type = abilcode
+default = "AHwe"
+
+[XG_SpeedLimit_Set]
+title = "突破极限移动速度"
+description = "突破 ${单位} 的移动速度为 ${v}"
+comment = "雪月团队: 0相当于禁锢。建议低于1000"
+category = TC_XGA
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "600"
+
+[XG_SpeedLimit_Off]
+title = "关闭突破极限移动速度"
+description = "关闭 ${单位} 的突破移动速度"
+comment = "雪月团队: 关闭无延迟等待，实时关闭"
+category = TC_XGA
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[XG_SingleGameExit_On]
+title = "开启禁止单机游戏 [New]"
+description = "开启禁止单机游戏"
+comment = "雪月团队: "
+category = TC_XGA
+
+[HC_AutoMergeItem]
+title = "物品自动叠加系统"
+description = "自动叠加[${XXX}]的物品"
+comment = "雪月团队: 重复使用此功能可以更换你要叠加的物品分类"
+category = TC_XGA
+[[.args]]
+type = itemtype
+default = "ItemTypeCharged"
+
+[HC_SetMergeMaxVal]
+title = "设置物品叠加上限"
+description = "设置[${Item}]的叠加上限为 ${Max}"
+comment = "雪月团队: [默认为0]设置为0则无限,叠加上限大于0时亦可无视分类叠加.需要先选择一种分类才能使用."
+category = TC_XGA
+[[.args]]
+type = itemcode
+default = "pghe"
+[[.args]]
+type = integer
+default = "10"
+
+[Xg_GetRectItemGroupAct]
+title = "新建物品组"
+description = "创建物品组自 ${区域} 内满足 ${条件}"
+comment = "物品组系统:"
+script_name = Xg_GetRectItemGroup
+category = TC_XGItG
+[[.args]]
+type = rect
+default = "GetPlayableMapRect"
+[[.args]]
+type = boolexpr
+
+[Xg_ItemGroupAddItem]
+title = "添加物品到物品组"
+description = "添加 ${物品} 到 ${物品组}"
+comment = "物品组系统:"
+category = TC_XGItG
+[[.args]]
+type = item
+default = "GetManipulatedItem"
+[[.args]]
+type = integer
+default = "Xg_LastCreatedItemGroupId"
+
+[Xg_Destroy_ItemGroup]
+title = "删除物品组"
+description = "销毁物品组 ${ID}"
+comment = "物品组系统:物品组会占用一些资源,所以不用的时候销毁掉"
+category = TC_XGItG
+[[.args]]
+type = integer
+default = "Xg_LastCreatedItemGroupId"
+
+[Xg_ItemGroupDoMultiple]
+title = "选取物品组内的物品做动作(多个动作)"
+description = "选取 ${物品组} 内所有物品做动作"
+comment = "物品组系统:使用'匹配物品'来取代相应的物品. 对于物品组内每个物品都会运行一次动作. 等待不能在组动作中运行.注意：不能用自带的[选取物品]"
+script_name = Xg_ItemGroupDo
+category = TC_XGItG
+[[.args]]
+type = integer
+default = "Xg_LastCreatedItemGroupId"
+
+[Xg_ItemGroupDo]
+title = "选取物品组内的物品做动作"
+description = "选取 ${物品组} 内所有物品做动作${动作}"
+comment = "物品组系统:使用'匹配物品'来取代相应的物品. 对于物品组内每个物品都会运行一次动作. 等待不能在组动作中运行.注意：不能用自带的[选取物品]"
+category = TC_XGItG
+[[.args]]
+type = integer
+default = "Xg_LastCreatedItemGroupId"
+[[.args]]
+type = code
+default = "DoNothing"
+
+[Xg_SpeedAact]
+title = "添加自定义减速效果(百分比)"
+description = "令 ${单位} ${加减} ${移速} %移速，持续 ${X}秒 减速特效->${特效} 绑定位置->${身体部位}"
+comment = "减速系统:"
+script_name = Xg_SpeedA
+category = TC_XGA
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = XGFH
+default = "XGFH2"
+[[.args]]
+type = real
+default = "0.30"
+[[.args]]
+type = real
+default = "3.00"
+[[.args]]
+type = modelfile
+default = "\"Abilities\\Spells\\Human\\slow\\slowtarget.mdl\""
+[[.args]]
+type = string
+default = "origin"
+
+[Xg_SpeedBact]
+title = "添加自定义减速效果(指定值)"
+description = "令 ${单位} ${加减} ${移速} 移速，持续 ${X}秒 减速特效->${特效} 绑定位置->${身体部位}"
+comment = "减速系统:"
+script_name = Xg_SpeedB
+category = TC_XGA
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = XGFH
+default = "XGFH2"
+[[.args]]
+type = real
+default = "45"
+[[.args]]
+type = real
+default = "3.00"
+[[.args]]
+type = modelfile
+default = "\"Abilities\\Spells\\Human\\slow\\slowtarget.mdl\""
+[[.args]]
+type = string
+default = "origin"
+
+[Xg_DSpeed]
+title = "删除自定义减速"
+description = "删除自定义减速 ${ID}"
+comment = "减速系统:减速ID是添加自定义减速时返回的整数,自定义减速会自动清除,但是你也可以用该指令手动删除"
+category = TC_XGA
+[[.args]]
+type = integer
+default = "last_XgSpeedId"
+
+[Xg_AddList]
+title = "添加装备类别"
+description = "关联装备技能命令ID[${ID}]类型名<${List}>"
+comment = "魔法书装备栏:"
+category = TC_XGM
+[[.args]]
+type = string
+default = "autodispelon"
+[[.args]]
+type = string
+default = "武器"
+
+[Xg_AddItem]
+title = "添加装备"
+description = "添加${Item} 到->${分类} 工程技能[${工程}]  属性技能[${属性}]"
+comment = "魔法书装备栏:添加到关联过的分类才有效"
+category = TC_XGM
+[[.args]]
+type = itemcode
+default = "rst1"
+[[.args]]
+type = string
+default = "武器"
+[[.args]]
+type = abilcode
+default = "ANeg"
+[[.args]]
+type = abilcode
+default = "Aspb"
+
+[Xg_UseFit]
+title = "使用装备"
+description = "命令 ${单位} 穿戴 ${装备}"
+comment = "魔法书装备栏:"
+category = TC_XGM
+[[.args]]
+type = unit
+default = "GetManipulatingUnit"
+[[.args]]
+type = item
+default = "GetManipulatedItem"
+
+[Xg_UnFit_A]
+title = "卸下装备(命令ID)"
+description = "命令 ${单位} 脱下 ${ID} ID部位装备"
+comment = "魔法书装备栏:"
+category = TC_XGM
+[[.args]]
+type = unit
+default = "GetOrderedUnit"
+[[.args]]
+type = ordercode
+default = "GetIssuedOrderIdBJ"
+
+[Xg_UnFit_B]
+title = "卸下装备(装备类别)"
+description = "命令 ${单位} 脱下 ${List} 类装备"
+comment = "魔法书装备栏:"
+category = TC_XGM
+[[.args]]
+type = unit
+default = "GetOrderedUnit"
+[[.args]]
+type = string
+default = "武器"
+
+[Xg_ExecuteTrigger]
+title = "执行自定义事件触发器"
+description = "执行自定义事件为-> ${Str} <-的触发器"
+comment = "自定义事件:这其实是单独一个系统，因为只有一个动作就不给它分类了。触发标签相同的触发器"
+category = TC_XGA
+[[.args]]
+type = string
+default = "伤害判断"
+
+[Xg_DamPlus_ON]
+title = "启动雪月伤害系统"
+description = "启动雪月伤害系统,魔抗腰带: ${MK}"
+comment = "雪月伤害系统: 在地图初始化时启动并关联一个魔抗腰带技能,,你需要设置它的[魔法伤害减少]为2.00,请勿改混乱的平衡常数"
+category = TC_DamPlus
+[[.args]]
+type = abilcode
+default = "AIsr"
+
+[XG_DamPlus_Event_Clear]
+title = "动态事件整理"
+description = "整理 ${xx} 事件"
+comment = "雪月伤害系统：如果你的地图要很多逆天触发器动态注册事件 请适当在注册前运行整理事件"
+category = TC_DamPlus
+[[.args]]
+type = XGDamPlusEvent
+default = XGDamPlusEvent1
+
+[Xg_DamPlus_SetDam]
+title = "设置伤害值"
+description = "设置伤害为 ${伤害值}"
+comment = "雪月伤害系统：你可以在任意时刻使用它来设置伤害，除了结束阶段。格挡事件中可以用来设置格挡值"
+category = TC_DamPlus
+[[.args]]
+type = real
+default = "0.00"
+
+[Xg_DamPlus_ChgUnitS]
+title = "修改伤害来源"
+description = "修改伤害来源为 ${Unit}"
+comment = "雪月伤害系统：只能在伤害被触发阶段，并不会真正改变仇恨为新的时候来源(触发伤害除外)。"
+category = TC_DamPlus
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[Xg_DamPlus_ChgPhyDam]
+title = "修改物理/法术伤害"
+description = "修改类型为 ${Type}"
+comment = "雪月伤害系统：只能在伤害被触发阶段"
+category = TC_DamPlus
+[[.args]]
+type = XGDamPlusPhyDam
+default = "XGDamPlusPhyDam_Phy"
+
+[Xg_DamPlus_PassDodge]
+title = "无视本次闪避"
+description = "无视本次闪避"
+comment = "雪月伤害系统：你应该用在接受攻击伤害的时候，因为只有攻击伤害才有效，因为只有攻击才可能被闪避"
+category = TC_DamPlus
+
+[Xg_DamPlus_SetSign]
+title = "设置伤害标记"
+description = "设置标记为 ${标记值}"
+comment = "雪月伤害系统：在你将要用触发造成伤害前为即将到来做标记，稍后你可以在接受伤害的触发器中取得标记。比如10086判断为移动短信轰炸伤害"
+category = TC_DamPlus
+[[.args]]
+type = integer
+default = "10086"
+
+[Xg_DamPlus_ChgSign]
+title = "修改本次伤害标记"
+description = "修改本次标记为 ${标记值}"
+comment = "雪月伤害系统：在接受伤害时/后使用，仅修改本次伤害的标记，方便后面阶段的判断"
+category = TC_DamPlus
+[[.args]]
+type = integer
+default = "10010"
+
+[XG_UnitDamTarPlus]
+title = "对目标造成伤害"
+description = "命令 ${单位} 对 ${Target} 造成 ${Amount} 点伤害(${是} 攻击伤害, ${是}远程攻击) 攻击类型: ${AttackType} 伤害类型: ${DamageType} 武器类型: ${WeaponType}"
+comment = "雪月伤害系统：你必须用这个函数去代替你的其他触发伤害，否则伤害系统无法判断你的伤害，其中通用伤害为真实伤害！另外注意，非远程伤害会触发冰甲减速，也有可能触发荆棘光环，自行测试"
+category = TC_DamPlus
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "500"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = attacktype
+default = "AttackTypeNormal"
+[[.args]]
+type = damagetype
+default = "DamageTypeNormal"
+[[.args]]
+type = weapontype
+default = "WEAPON_TYPE_WHOKNOWS"
+
+[XG_DamPlus_Dot]
+title = "DoT持续伤害"
+description = "命令 ${单位} 对 ${Target} 造成 ${Amount} 点伤害,持续${keep}秒,伤害间隔${timeout}秒,${初始伤害},伤害标记${sign}.(${是} 攻击伤害, ${是}远程伤害) 攻击类型: ${AttackType} 伤害类型: ${DamageType} 武器类型: ${WeaponType}"
+comment = "雪月伤害系统：通用伤害为真实伤害！ 选择初始伤害会先直接造成一次额外的伤害。其中伤害标记有助于你判断伤害源头"
+category = TC_DamPlus
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "500"
+[[.args]]
+type = real
+default = "5.00"
+[[.args]]
+type = real
+default = "1.00"
+[[.args]]
+type = InitialDam
+default = "InitialDam_TRUE"
+[[.args]]
+type = integer
+default = "110"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = attacktype
+default = "AttackTypeNormal"
+[[.args]]
+type = damagetype
+default = "DamageTypeNormal"
+[[.args]]
+type = weapontype
+default = "WEAPON_TYPE_WHOKNOWS"
+
+
+[Xg_DamPlus_SetAttr]
+title = "设置单位属性"
+description = "设置[${单位}]的 ${属性} 为 ${值}"
+comment = "雪月伤害系统：治疗属性需要作者自己去应用，伤害系统里并不会处理它们。"
+category = TC_DamPlus
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = DamPlusState
+default = "DamPlusState21"
+[[.args]]
+type = real
+default = "0.25"
+
+[Xg_DamPlus_AddAttr]
+title = "增加单位属性"
+description = "[${单位}]的 ${属性} ${增加} ${值}"
+comment = "雪月伤害系统：带*选项需要自己应用"
+category = TC_DamPlus
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = DamPlusState
+default = "DamPlusState21"
+[[.args]]
+type = HC_Add_Reduce
+default = "HC_Add"
+[[.args]]
+type = real
+default = "0.25"
+
+[Xg_DamPlus_RealAbil]
+title = "关联一个挡伤血牌"
+description = "设置血牌为[ ${Abil}] 能抵挡[${HP}]点伤害"
+comment = "雪月伤害系统：启动伤害系统后关联一个血牌技能，让它来为你修正整个系统的伤害，普通图3000W以下"
+category = TC_DamPlus
+[[.args]]
+type = abilcode
+default = "AIl2"
+[[.args]]
+type = real
+default = "300"
+
+[Xg_DamPlus_SetArint]
+title = "设置常量"
+description = "设置  ${Abil} ＝ ${HP}"
+comment = "雪月伤害系统：闪避/格挡上限在启动系统时会自动设置为1.00，抗性因子为0.06，你都可以在这里手动更改"
+category = TC_DamPlus
+[[.args]]
+type = XGDamPlusSConst
+default = XGDamPlusSConst0
+[[.args]]
+type = real
+default = "0.06"
+
+[Xg_DamPlus_SetSuck]
+title = "设置吸血量"
+description = "设置当前的吸血量为[${Value}]"
+comment = "雪月伤害系统: 设置吸血/生命偷取 都用这个"
+category = TC_DamPlus
+[[.args]]
+type = real
+default = "100"
+
+[Xg_ItemClear_On]
+title = "启动物品自动排泄系统"
+description = "启动物品自动排泄系统"
+comment = "雪月系统：开启后，你吃完书地上就不会留下一些迷你模型了。推荐开启"
+category = TC_XGA
+
+[XG_CreateJumpTextFormLoc]
+title = "创建跳跃漂浮文字"
+description = "在${指定点}创建跳跃文字 文本为:${字符串} 大小[${Size}] 持续时间[${keep}] RGBA[${R},${G},${B},${A}] 缩放[${Bool}]"
+comment = "雪月系统： RGBA 中的A是Alpha"
+category = TC_XGA
+[[.args]]
+type = location
+default = "GetUnitLoc"
+[[.args]]
+type = string
+default = "-100"
+[[.args]]
+type = real
+default = "10.00"
+[[.args]]
+type = real
+default = "2.00"
+[[.args]]
+type = integer
+default = "255"
+[[.args]]
+type = integer
+default = "0"
+[[.args]]
+type = integer
+default = "0"
+[[.args]]
+type = integer
+default = "255"
+[[.args]]
+type = boolean
+default = "true"
+
+[XG_Charge_Unit]
+title = "冲锋 -> 单位"
+description = "令${Unit}冲锋到${目标}的位置,持续${x}秒 刷新间隔${t}.碰撞半径${r} 伤害值${val} 伤害来源:${unit} ${跟随},${摧毁树木}，${无视}碰撞，${无视}建筑碰撞，${无视}地形 附加${特效} 目标附加${特效}"
+comment = "雪月冲锋系统: 你需要用一个新的触发器创建一个事件来捕捉碰撞的单位，每个单位只会触发一次碰撞事件.没有伤害来源 或者伤害不大于0都不会造成伤害"
+category = TC_Charge
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "1.00"
+min = 0
+[[.args]]
+type = real
+default = "0.02"
+min = 0.01
+[[.args]]
+type = real
+default = "128"
+min = 0
+[[.args]]
+type = real
+default = "12345"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = FollowType
+default = "FollowType_TRUE"
+[[.args]]
+type = DestroyType
+default = "DestroyType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = modelfile
+[[.args]]
+type = modelfile
+
+[XG_Charge_Loc]
+title = "冲锋 -> 点"
+description = "令${Unit}冲锋到${指定点},持续${x}秒 刷新间隔${t}.碰撞半径${r} 伤害值${val} 伤害来源:${unit},${摧毁树木}，${计算}碰撞，${无视}建筑，${无视}地形 附加${特效} 目标附加${特效}"
+comment = "雪月冲锋系统: 你需要用一个新的触发器创建一个事件来捕捉碰撞的单位，每个单位只会触发一次碰撞事件.伤害来源为null 或者伤害不大于0都不会造成伤害"
+category = TC_Charge
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = location
+default = "GetUnitLoc"
+[[.args]]
+type = real
+default = "1.00"
+min = 0
+[[.args]]
+type = real
+default = "0.02"
+min = 0.01
+[[.args]]
+type = real
+default = "128"
+min = 0
+[[.args]]
+type = real
+default = "12345"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = DestroyType
+default = "DestroyType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = modelfile
+[[.args]]
+type = modelfile
+
+[XG_Charge_Angle_Dist]
+title = "冲锋 -> 角度距离"
+description = "令${Unit}向${angle}度冲锋${dist}码,持续${x}秒 刷新间隔${t}.碰撞半径${r} 伤害值${val} 伤害来源:${unit},${摧毁树木}，${计算}碰撞，${无视}建筑，${无视}地形 附加${特效} 目标附加${特效}"
+comment = "雪月冲锋系统: 你需要用一个新的触发器创建一个事件来捕捉碰撞的单位，每个单位只会触发一次碰撞事件.伤害来源为null 或者伤害不大于0都不会造成伤害"
+category = TC_Charge
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = degree
+default = "0"
+[[.args]]
+type = real
+default = "500"
+[[.args]]
+type = real
+default = "1.00"
+min = 0
+[[.args]]
+type = real
+default = "0.02"
+min = 0.01
+[[.args]]
+type = real
+default = "128"
+min = 0
+[[.args]]
+type = real
+default = "12345"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = DestroyType
+default = "DestroyType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = IgnoreType
+default = "IgnoreType_TRUE"
+[[.args]]
+type = modelfile
+[[.args]]
+type = modelfile
+
+[XG_Charge_Stop]
+title = "冲锋 -> 停止"
+description = "停止本次冲锋"
+comment = "雪月冲锋系统: 停止本次的冲锋。"
+category = TC_Charge
+
+[XG_Charge_StopW]
+title = "冲锋 -> 终止"
+description = "终止冲锋 ${key}"
+comment = "雪月冲锋系统: 终止指定冲锋。"
+category = TC_Charge
+[[.args]]
+type = integer
+default = "Xg_Charge_Key"
+
+[XG_CreateLocalMultiBoard]
+title = "创建"
+description = "创建一个序号为 <${ID}> 的多面板给${玩家}： 行数为 ${rows} 列数为 ${cols} 标题为 ${文字}"
+comment = "雪月团队: 异步多面板不能在地图初始化时显示.只会对指定玩家创建"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = integer
+default = "3"
+[[.args]]
+type = integer
+default = "2"
+[[.args]]
+type = StringExt
+default = "雪月团队"
+max = 512
+
+[XG_DestroyLocalMultiBoard]
+title = "删除"
+description = "删除序号 <${ID}> 的异步多面板"
+comment = "雪月团队: 销毁异步多面板."
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+
+[XG_DisplayLocalMultiBoard]
+title = "显示/隐藏 [R]"
+description = "设置序号 <${ID}> 的异步多面板 ${Show/Hide}"
+comment = "雪月团队: 多面板不能在地图初始化时显示."
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = showhideoption
+default = "ShowHideHide"
+
+[XG_SuppressDisplayLocalMultiBoard]
+title = "显示/隐藏多面板模式"
+description = "对${Player} ${Show/Hide} 多面板模式"
+comment = "雪月团队: 隐藏多面板模式将无法显示多面板."
+category = TC_LocalMB
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = showhideoption
+default = "ShowHideHide"
+
+[XG_MinimizeLocalMultiBoard]
+title = "最大/最小化"
+description = "设置序号 <${ID}> 的异步多面板 ${Minimize/Maximize}"
+comment = "雪月团队: 最小化的多面板只显示标题."
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = minimizeoption
+default = "Minimize"
+
+[XG_ClearLocalMultiBoard]
+title = "清空异步多面板"
+description = "清空序号 <${ID}> 的异步多面板"
+comment = "雪月团队: 清空该多面板中的所有行和列."
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+
+[XG_SetTitleTextLocalMultiBoard]
+title = "设置标题"
+description = "设置序号 <${ID}>的异步多面板 标题为 ${文字}"
+comment = "雪月团队: "
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = StringExt
+max = 512
+
+[XG_SetTitleColorLocalMultiBoard]
+title = "设置标题颜色"
+description = "设置序号 <${ID}> 的异步多面板 标题颜色为(${Red},${Green},${Blue}), Alpha值为 ${Transparency}"
+comment = "雪月团队: 颜色格式为(红,绿,蓝). Alpha值为0是不可见的. 颜色值和Alpha值取值范围为0-255."
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "255"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "204"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "51"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "255"
+min = 0
+max = 255
+
+[XG_SetRowCountLocalMultiBoard]
+title = "设置行数"
+description = "设置序号 <${ID}> 的异步多面板 行数为 ${Rows}"
+comment = "雪月团队: "
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 1
+max = 32
+
+[XG_SetColumnCountLocalMultiBoard]
+title = "设置列数"
+description = "设置序号 <${ID}> 的异步多面板 列数为 ${Cols}"
+comment = "雪月团队: "
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 1
+max = 16
+
+[XG_SetItemStyleLocalMultiBoard]
+title = "设置项目显示风格"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列项目的显示风格: ${Show/Hide} 文字 ${Show/Hide} 图标"
+comment = "雪月团队: 这个只能针对指定项目设置,效率高 如果要设置整行/列 请用Ex功能 "
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+
+[XG_SetItemStyleLocalMultiBoardEx]
+title = "设置项目显示风格 [Ex]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列项目的显示风格: ${Show/Hide} 文字 ${Show/Hide} 图标"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 如果不用到所有行/列功能建议不要用Ex"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+
+[XG_SetItemValueLocalMultiBoard]
+title = "设置项目文本"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目文本为 ${文字}"
+comment = "雪月团队: 这个只能针对指定项目设置,效率高 如果要设置整行/列 请用Ex功能"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = StringExt
+max = 128
+
+[XG_SetItemValueLocalMultiBoardEx]
+title = "设置项目文本 [Ex]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目文本为 ${文字}"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 如果不用到所有行/列功能建议不要用Ex"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = StringExt
+max = 128
+
+[XG_SetItemColorLocalMultiBoardW]
+title = "设置项目颜色[百分比]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目颜色为(${Red}%, ${Green}%, ${Blue}%) 透明度为 ${Transparency}%"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 颜色格式为(红,绿,蓝). 透明度100%是不可见的. 如果要设置整行/列 请用Ex功能"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "100"
+min = 0
+max = 100
+[[.args]]
+type = integer
+default = "80"
+min = 0
+max = 100
+[[.args]]
+type = integer
+default = "20"
+min = 0
+max = 100
+[[.args]]
+type = integer
+default = "0"
+min = 0
+max = 100
+
+[XG_SetItemColorLocalMultiBoardWEx]
+title = "设置项目颜色[百分比] [Ex]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目颜色为(${Red}%, ${Green}%, ${Blue}%) 透明度为 ${Transparency}%"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 颜色格式为(红,绿,蓝). 透明度100%是不可见的. 如果不用到所有行/列功能建议不要用Ex"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "100"
+min = 0
+max = 100
+[[.args]]
+type = integer
+default = "80"
+min = 0
+max = 100
+[[.args]]
+type = integer
+default = "20"
+min = 0
+max = 100
+[[.args]]
+type = integer
+default = "0"
+min = 0
+max = 100
+
+[XG_SetItemColorLocalMultiBoard]
+title = "设置项目颜色[指定值]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目颜色为(${Red}, ${Green}, ${Blue}) 透明度为 ${Transparency}"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 颜色格式为(红,绿,蓝). 透明度0是不可见的. 如果要设置整行/列 请用Ex功能"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "100"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "80"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "20"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "0"
+min = 0
+max = 255
+
+[XG_SetItemColorLocalMultiBoardEx]
+title = "设置项目颜色[指定值] [Ex]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目颜色为(${Red}, ${Green}, ${Blue}) 透明度为 ${Transparency}"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 颜色格式为(红,绿,蓝). 透明度0是不可见的. 如果不用到所有行/列功能建议不要用Ex"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "100"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "80"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "20"
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = "0"
+min = 0
+max = 255
+
+[XG_SetItemWidthLocalMultiBoard]
+title = "设置项目宽度"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目宽度为屏幕的 ${Width}%"
+comment = "雪月团队: 这个只能针对指定项目设置,效率高 如果要设置整行/列 请用Ex功能"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = real
+default = "3"
+min = 0
+max = 100
+
+[XG_SetItemWidthLocalMultiBoardEx]
+title = "设置项目宽度 [Ex]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目宽度为屏幕的 ${Width}%"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 如果不用到所有行/列功能建议不要用Ex"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = real
+default = "3"
+min = 0
+max = 100
+
+[XG_SetItemIconLocalMultiBoard]
+title = "设置项目图标"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目图标为 ${Icon File}"
+comment = "雪月团队: 这个只能针对指定项目设置,效率高 如果要设置整行/列 请用Ex功能"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = imagefile
+default = "\"UI\\Feedback\\Resources\\ResourceGold.blp\""
+
+[XG_SetItemIconLocalMultiBoardEx]
+title = "设置项目图标 [Ex]"
+description = "设置序号 <${ID}> 的异步多面板 第 ${row} 行,第 ${col} 列的项目图标为 ${Icon File}"
+comment = "雪月团队: 可以设置行/列数为0来指代所有的行/列. 如果不用到所有行/列功能建议不要用Ex"
+category = TC_LocalMB
+[[.args]]
+type = integer
+default = "111"
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = integer
+default = "1"
+min = 0
+[[.args]]
+type = imagefile
+default = "\"UI\\Feedback\\Resources\\ResourceGold.blp\""
+
+[XG_CinematicFadeForPlayer]
+title = "淡入淡出滤镜(指定玩家) [H]"
+description = "对 ${玩家} 使用 ${fadetype} 持续 ${Duration} 秒,使用图片: ${Texture},混合方式: ${BlendingMethod},地形涂层标志 ${Sign} RGB:(${Red},${Green},${Blue}) Alpha: ${Alpha}"
+comment = "雪月团队: [原作unWM]Alpha值为0是不可见的,此为异步操作。"
+category = TC_CINEMATIC
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = XGCineFadeType
+default = "XG_CineFadeType_InOut"
+[[.args]]
+type = real
+default = "1.23"
+[[.args]]
+type = cinefiltertexture
+default = "CineFilterTextureWhite"
+[[.args]]
+type = XGCineBlendMethod
+default = "XG_CineBlendMethod_Default"
+[[.args]]
+type = XGCineTerrainFlag
+default = "XG_CineTerrainFlag_Default"
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+[[.args]]
+type = integer
+default = 255
+min = 0
+max = 255
+
+[XG_AutoAttr_SetClassA]
+title = "[1]设置分类"
+description = "设置分类为 ${s}"
+comment = "雪月团队: [只能用预设分类]设置了分类，默认为所有"
+category = TC_AutoAttrSys
+[[.args]]
+type = XgAutoAttrClass
+default = "XgAutoAttrClass_Permanent"
+
+[XG_AutoAttr_AddAttrA]
+title = "[2]添加属性匹配规则"
+description = "添加属性匹配规则 ${str} 保存到:${key} 属性名:${v} 附加规则 ${s}"
+comment = "雪月团队: 附加规则一般为空，其中#1为匹配值 key与属性必须是常量！"
+category = TC_AutoAttrSys
+[[.args]]
+type = string
+default = "物理吸血%+([0-9]+)%%"
+[[.args]]
+type = integer
+[[.args]]
+type = string
+default = "物理吸血"
+[[.args]]
+type = string
+default = "#1/100"
+
+[XG_AutoAttr_StartA]
+title = "[3]启动预读系统"
+description = "启动预读系统"
+comment = "雪月团队: 请确认你已经添加完匹配规则后启动，只启动一次！属性全部读为实数"
+category = TC_AutoAttrSys
+
+[XG_Create_Expression]
+title = "创建表达式"
+description = "创建表达式 名:${s} 式:${e}"
+comment = "雪月团队: 创建一个条件表达式"
+category = TC_PreExpression
+[[.args]]
+type = string
+default = "无敌的单位"
+[[.args]]
+type = boolexpr
+default = "OperatorCompareBoolean"
+
+
+
+
+
+
+
+

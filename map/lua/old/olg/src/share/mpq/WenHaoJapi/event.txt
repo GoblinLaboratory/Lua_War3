@@ -1,0 +1,68 @@
+﻿[Xg_Reg_ZhiLiao]
+title = "任意单位 接受治疗"
+description = "任意单位 接受治疗"
+comment = "治疗系统:"
+category = TC_XGZHL
+
+[Xg_Reg_SDL]
+title = "任意单位 被闪电链击中"
+description = "任意单位 被闪电链击中"
+comment = "闪电链系统:"
+category = TC_XGSDL
+
+[XG_JapiDam_RegEvent]
+title = "注册Japi伤害系统事件"
+description = "任意单位 ${事件名}"
+comment = "Japi伤害系统：使用之前你需要在地图初始化的时候启动一次伤害系统！"
+category = TC_JapiDam
+[[.args]]
+type = XgJapiDamEventType
+default = XgJapiDamEventType1
+
+[Xg_RegDefineEvent]
+title = "注册自定义事件"
+description = "注册自定义事件 - ${事件名}"
+comment = "自定义事件:"
+category = TC_XGE
+[[.args]]
+type = string
+default = "伤害判断"
+
+[XG_DamPlus_Reg]
+title = "注册伤害系统Plus事件"
+description = "任意单位 ${事件名}"
+comment = "雪月伤害系统：使用之前你需要在地图初始化的时候启动一次伤害系统！"
+category = TC_DamPlus
+[[.args]]
+type = XGDamPlusEvent
+default = XGDamPlusEvent1
+
+[XG_DoubleClick_Reg]
+title = "注册双击单位事件"
+description = "任意单位被双击"
+comment = "雪月系统：用触发单位来获取被双击的单位，触发玩家获取点击它的玩家"
+category = TC_XGE
+
+[XG_Charge_Reg]
+title = "单位被冲锋碰撞"
+description = "单位被冲锋碰撞"
+comment = "雪月冲锋系统：冲锋单位获得正在冲锋的单位，碰撞单位获取被冲锋碰撞到的单位，冲锋目标获得冲锋时选择的目标(指定点时不可用)"
+category = TC_Charge
+
+[XG_Charge_End_Reg]
+title = "冲锋结束"
+description = "冲锋结束"
+comment = "雪月冲锋系统：冲锋单位可获得结束冲锋的单位，碰撞单位不可用！ 冲锋目标获得冲锋时选择的目标(指定点时不可用)"
+category = TC_Charge
+
+[XG_GiveUnitItem_Reg]
+title = "单位将物品给予其他单位"
+description = "单位给予任意单位物品"
+comment = "雪月物品给予事件: 给予的物品  | 物品接受者 | 物品给予者  ，在失去物品的时候对该物品进行给予会发生冲突(况且丢弃物品同时把物品移交给其他单位在不用计时器过渡过渡时是无效的,所以请手动避免BUG)"
+category = TC_XGA
+
+[XG_UnitEnterGame_Reg]
+title = "任意单位进入游戏"
+description = "任意单位进入游戏"
+comment = "雪月系统: 不管是预设在地图上的还是触发器创建的都能捕获，请用 [进入游戏的单位] 来指代这些被捕获的单位"
+category = TC_XGA

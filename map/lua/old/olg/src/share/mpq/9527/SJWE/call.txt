@@ -1,0 +1,1273 @@
+[GetComputerForce]
+title = "获取电脑敌对玩家组[s]"
+description = "电脑敌对玩家组"
+comment = "此动作伤害系统中可用。"
+category = TC_HTSY
+returns = force
+
+[GetPlayerForce]
+title = "获取玩家结盟的玩家组[s]"
+description = "玩家结盟的玩家组"
+comment = "此动作伤害系统中可用。"
+category = TC_HTSY
+returns = force
+
+[GetBuffEventBuff]
+title = "获取触发BUFF变化事件的BUFF[s]"
+description = "触发BUFF变化事件的BUFF"
+comment = "-----注意在检测BUFF系统触发中，条件要写在动作中，写在触发的触发条件中将无效。-----"
+category = TC_BUFF
+returns = buffcode
+
+[CreateMultiboardForPlayer]
+title = "为玩家创建新的多面板[s]"
+description = "为${玩家}创建标识为${标识}的新多面板"
+comment = "可以用最后创建的多面板来获取。"
+category = TC_UDST
+returns = multiboard
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = integer
+default = "0"
+min = 0
+max = 680
+
+[GetPlayerMultiboard]
+title = "获取玩家的多面板[s]"
+description ="${玩家}标识为${标识}的多面板"
+comment = "只有在为玩家创建后才能获取。"
+category = TC_UDST
+returns = multiboard
+[[.args]]
+type = player
+default = "Player00"
+[[.args]]
+type = integer
+default = "0"
+min = 0
+max = 680
+
+[GetItemPredicableMultiboard]
+title = "获取玩家物品属性多面板[s]"
+description = "玩家序号为${玩家序号}的物品属性多面板"
+comment = "伤害系统专用"
+category = TC_UDDS
+returns = multiboard
+[[.args]]
+type = integer
+default = "GetPlayerId"
+min = 0
+max = 12
+
+[GetUnitPredicableMultiboard]
+title = "获取玩家单位属性多面板[s]"
+description = "玩家序号为${玩家序号}的玩家单位属性多面板"
+comment = "伤害系统专用"
+category = TC_UDDS
+returns = multiboard
+[[.args]]
+type = integer
+default = "GetPlayerId"
+min = 0
+max = 12
+
+[GetItemLevelMultiboard]
+title = "获取玩家物品等级多面板[s]"
+description = "玩家序号为${玩家序号}的玩家物品等级多面板"
+comment = ""
+category = TC_UDDS
+returns = multiboard
+[[.args]]
+type = integer
+default = "GetPlayerId"
+
+[GetHatredAndDPSMultiboard]
+title = "获取玩家仇恨/DPS多面板[s]"
+description = "玩家序号为${玩家序号}的玩家仇恨/DPS多面板"
+comment = "伤害系统专用"
+category = TC_UDDS
+returns = multiboard
+[[.args]]
+type = integer
+default = "GetPlayerId"
+min = 0
+max = 12
+
+[GetPlayerUnit]
+title = "获取统计组中玩家单位[s]"
+description = "统计组中${玩家}的单位"
+comment = ""
+category = TC_UDDS
+returns = unit
+[[.args]]
+type = player
+
+[GetAppointUnit]
+title = "获取仇恨/DPS统计指定单位[s]"
+description = "仇恨/DPS统计指定单位"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetItemUpgradeEventUnit]
+title = "获取物品升级事件的触发单位[s]"
+description = "触发物品升级的单位"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetItemPowerUpEventUnit]
+title = "获取物品强化等级提升事件的触发单位[s]"
+description = "触发物品强化等级提升的单位"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetItemPowerDownEventUnit]
+title = "获取物品强化等级降低事件的触发单位[s]"
+description = "触发物品强化等级降低的单位"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetMeleeEventDamageSource]
+title = "普通攻击伤害来源[s]"
+description = "普通攻击伤害来源"
+comment = "普通攻击和技能攻击为内部事件，只有不加载重建伤害触发才可使用。"
+category = TC_UDDS
+returns = unit
+
+[GetMeleeEventDamagedUnit]
+title = "普通攻击被伤害单位[s]"
+description = "普通攻击被伤害单位"
+comment = "普通攻击和技能攻击为内部事件，只有不加载重建伤害触发才可使用。"
+category = TC_UDDS
+returns = unit
+
+[GetUnitBuffSource]
+title = "获取模拟BUFF来源单位[s]"
+description = "${指定单位}的${模拟BUFF}来源单位"
+comment = "(只能用于模拟BUFF)-----注意在检测BUFF系统触发中，条件要写在动作中，写在触发的触发条件中将无效。-----"
+category = TC_BUFF
+returns = unit
+[[.args]]
+type = unit
+default = GetTriggerUnit
+[[.args]]
+type = buffcode
+
+[GetBuffEventUnit]
+title = "获取BUFF变化触发单位[s]"
+description = "触发BUFF变化的单位"
+comment = "-----注意在检测BUFF系统触发中，条件要写在动作中，写在触发的触发条件中将无效。-----"
+category = TC_BUFF
+returns = unit
+
+[GetMimeticdMeleeEventDamageSource]
+title = "物理伤害（模拟）伤害来源[s]"
+description = "物理伤害（模拟）伤害来源"
+comment = "物理伤害（模拟）专用事件响应。"
+category = TC_UDDS
+returns = unit
+
+[GetMimeticdMeleeEventDamagedUnit]
+title = "物理伤害（模拟）被伤害单位[s]"
+description = "物理伤害（模拟）被伤害单位"
+comment = "模拟物理（模拟）伤害专用事件响应。"
+category = TC_UDDS
+returns = unit
+
+[GetMimeticdMagicEventDamageSource]
+title = "法术伤害（模拟）来源[s]"
+description = "法术伤害（模拟）伤害来源"
+comment = "法术伤害（模拟）专用事件响应。"
+category = TC_UDDS
+returns = unit
+
+[GetMimeticdMagicEventDamagedUnit]
+title = "法术伤害（模拟）被伤害单位[s]"
+description = "法术伤害（模拟）被伤害单位"
+comment = "法术伤害（模拟）专用事件响应。"
+category = TC_UDDS
+returns = unit
+
+[GetASDEventDamagedUnit]
+title = "任意伤害被伤害单位(模拟)[s]"
+description = "任意伤害被伤害单位（模拟）"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetASDEventDamageSource]
+title = "任意伤害伤害来源(模拟)[s]"
+description = "任意伤害伤害来源(模拟)[s]"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetNTDEventDamagedUnit]
+title = "无类型真实伤害被伤害单位(模拟)[s]"
+description = "无类型真实伤害被伤害单位(模拟)[s]"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetNTDEventDamageSource]
+title = "无类型真实伤害伤害来源(模拟)[s]"
+description = "无类型真实伤害伤害来源(模拟)[s]"
+comment = ""
+category = TC_UDDS
+returns = unit
+
+[GetHealingEventHealingSource]
+title = "模拟治疗来源单位[s]"
+description = "模拟治疗来源单位"
+comment = "响应模拟治疗事件"
+category = TC_UDDS
+returns = unit
+
+[GetHealingEventTreatedUnit]
+title = "模拟治疗被治疗单位[s]"
+description = "模拟治疗被治疗单位"
+comment = "响应模拟治疗事件"
+category = TC_UDDS
+returns = unit
+
+[GetReboundDamageEventDamageSource]
+title = "反弹伤害来源单位[s]"
+description = "反弹伤害来源单位"
+comment = "响应反弹伤害事件"
+category = TC_UDDS
+returns = unit
+
+[GetReboundDamageEventDamagedUnit]
+title = "反弹伤害被伤害单位[s]"
+description = "反弹伤害被伤害单位"
+comment = "响应反弹伤害事件"
+category = TC_UDDS
+returns = unit
+
+[GetMagicEventDamageSource]
+title = "技能攻击伤害来源[s]"
+description = "技能攻击伤害来源"
+comment = "普通攻击和技能攻击为内部事件，只有不加载重建伤害触发才可使用。"
+category = TC_UDDS
+returns = unit
+
+[GetMagicEventDamagedUnit]
+title = "技能攻击被伤害单位[s]"
+description = "技能攻击被伤害单位"
+comment = "普通攻击和技能攻击为内部事件，只有不加载重建伤害触发才可使用。"
+category = TC_UDDS
+returns = unit
+
+[GetUnitKilledEventKillingUnit]
+title = "凶手单位(伤害系统专用)[s]"
+description = "凶手单位(伤害系统专用)"
+comment = "伤害系统专用，请不要与魔兽自带函数混淆。"
+category = TC_UDDS
+returns = unit
+
+[GetUnitKilledEventKilledUnit]
+title = "被杀害单位(伤害系统专用)[s]"
+description = "被杀害单位(伤害系统专用)"
+comment = "伤害系统专用，请不要与魔兽自带函数混淆。"
+category = TC_UDDS
+returns = unit
+
+[GetEnterUnit]
+title = "进入地图的单位[s]"
+description = "进入地图的单位"
+comment = "响应任意单位进入地图事件。"
+category = TC_UDST
+returns = unit
+
+[GetHatredMaxUnit]
+title = "获取仇恨最大单位[s]"
+description ="${被伤害单位}仇恨最大的单位"
+comment = "此动作伤害系统中可用。"
+category = TC_HTSY
+returns = unit
+[[.args]]
+type = unit
+
+[GetHatredMinUnit]
+title = "获取仇恨最小单位[s]"
+description ="${被伤害单位}的仇恨最小的单位"
+comment = "此动作伤害系统中可用。"
+category = TC_HTSY
+returns = unit
+[[.args]]
+type = unit
+
+[TypeId2S]
+title = "转换类型ID为类型名[s]"
+description = "转换${类型ID}为类型名"
+comment = ""
+category = TC_UDDS
+returns = string
+[[.args]]
+type = WUPTypeID
+
+[GetItemTypeName]
+title = "获取物品类型的附加类型[s]"
+description ="${物品类型}的附加类型"
+comment = ""
+category = TC_UDDS
+returns = string
+[[.args]]
+type = itemcode
+
+[GetUnitBuffStories]
+title = "获取指定单位模拟BUFF层数[s]"
+description ="${指定单位}的${魔法效果}层数"
+comment = "BUFF必须为检测队列中的BUFF，否则无效。只对光环模拟Buff有效。"
+category = TC_BUFF
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = buffcode
+
+[GetUnitBuffStoriesMax]
+title = "获取指定单位模拟BUFF层数上限[s]"
+description ="${指定单位}的${魔法效果}模拟BUFF层数上限"
+comment = "BUFF必须为检测队列中的BUFF，否则无效。只对光环模拟Buff有效。"
+category = TC_BUFF
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = buffcode
+
+[GetBuffStoriesMax]
+title = "获取模拟BUFF层数上限[s]"
+description ="${魔法效果}模拟BUFF层数上限"
+comment = "BUFF必须为检测队列中的BUFF，否则无效。只对光环模拟Buff有效。"
+category = TC_BUFF
+returns = integer
+[[.args]]
+type = buffcode
+
+[CharAt]
+title = "字符串匹配[s]"
+description = "判断${字符串1}是否包含${字符串2}"
+comment = "是则返回开始索引，否返回-1。"
+category = TC_UDST
+returns = integer
+[[.args]]
+type = string
+[[.args]]
+type = string
+
+[GetUnitItemMaxNumber]
+title = "获取单位虚拟物品栏最大序号[s]"
+description ="${单位}虚拟物品栏最大序号"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = unit
+
+[GetUnitAttributeType]
+title = "获取指定单位类型数据[s]"
+description ="${指定单位}的${类型ID}类型数据"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = SJTypeID0
+default = "PAType"
+
+[GetItemIntegerData]
+title = "获得指定物品相关的整数数据[s]"
+description ="${指定物品}的${类型ID}整数数据"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = item
+[[.args]]
+type = ItemIData
+default = "ItemIDataName0"
+
+[GetItemTypeIntegerData]
+title = "获取物品类型相关的整数数据[s]"
+description ="${物品类型}的${类型ID}整数数据"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = itemcode
+[[.args]]
+type = ItemIData
+default = "ItemIDataName0"
+
+[UnitHemophagiaConditions]
+title = "是否对某种物理伤害吸血[s]"
+description ="${指定单位}是否对物理伤害类型${物理伤害类型}吸血"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = SJAttackType
+default = "Attack1Type"
+
+[UnitReboundConditions]
+title = "是否反弹某种物理伤害[s]"
+description ="${指定单位}反弹物理伤害类型${物理伤害类型}的伤害"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = SJAttackType
+default = "Attack1Type"
+
+[UnitMagicHemophagiaConditions]
+title = "是否对某种法术伤害吸血[s]"
+description ="${指定单位}是否对法术伤害类型${法术伤害类型}吸血"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = SJDamageType
+default = "SDamage1Type"
+
+[UnitMagicReboundConditions]
+title = "是否反弹某种法术伤害[s]"
+description ="${指定单位}是否反弹法术伤害类型${法术伤害类型}的伤害"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = SJDamageType
+default = "SDamage1Type"
+
+[UnitImmuneConditions]
+title = "是否免疫某种攻击伤害[s]"
+description ="${指定单位}对伤害类型${伤害类型}的伤害免疫"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = PAMAType
+default = "PAMAType1"
+
+[GetItemTypeNumberMax]
+title = "获取物品附加类型的可持有数量[s]"
+description = "物品附加类型${类型名}的可持有数量"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = string
+
+[GetTypeId]
+title = "获取类型名的类型ID[s]"
+description ="${类型名}的类型ID"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = string
+
+[GetHatredUnitIndex]
+title = "获取伤害来源在仇恨列表索引[s]"
+description ="${受伤单位}的仇恨列表中伤害来源单位${伤害来源}的索引值"
+comment = ""
+category = TC_HTSY
+returns = integer
+[[.args]]
+type = unit
+[[.args]]
+type = unit
+
+[GetMaxIndex]
+title = "获取对象拥有过的最大索引数[s]"
+description ="${对象ID}拥有过的最大索引数"
+comment = "获取对象拥有过的最大索引数。"
+category = TC_INDEXSYS
+returns = integer
+[[.args]]
+type = integer
+
+[CreateIndex]
+title = "为对象分配索引值[s]"
+description = "为${对象ID}分配唯一索引值"
+comment = "为对象分配一个唯一索引值。"
+category = TC_INDEXSYS
+returns = integer
+[[.args]]
+type = integer
+
+[GetType]
+title = "获取对象整数类型数据[s]"
+description ="${对象}的类型${类型}的整数型数据"
+comment = ""
+category = TC_UDDS
+returns = integer
+[[.args]]
+type = agentTypeId
+[[.args]]
+type = SJTypeID0
+
+[GetPlayerUnitTypeCount]
+title = "指定玩家的单位类型数目[s]"
+description ="获取${玩家}的单位类型为${单位类型}的单位数目"
+comment = "包括正在建造的单位。(common.ai里的native函数)"
+category = TC_UDST
+returns = integer
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = unitcode
+default = "hfoo"
+
+[GetUnitBuffBooleanData]
+title = "获取指定单位模拟BUFF布尔值属性[s]"
+description ="${指定单位}的${魔法效果}的${类型}"
+comment = "（刷新模式false为重置buff已持续时间，true为按BUFF刷新增加持续时间增加Buff持续时间。）BUFF必须为检测队列中的BUFF，否则无效。只对光环模拟Buff有效。"
+category = TC_BUFF
+returns = boolean
+[[.args]]
+type = unit
+[[.args]]
+type = buffcode
+[[.args]]
+type = BooleanType2
+default = "BOType07"
+
+[GetBuffBooleanData]
+title = "获取模拟BUFF布尔值类型数据[s]"
+description ="${魔法效果}的${类型}"
+comment = "（刷新模式false为重置buff已持续时间，true为按BUFF刷新增加持续时间增加Buff持续时间。）BUFF必须为检测队列中的BUFF，否则无效。只对光环模拟Buff有效。"
+category = TC_BUFF
+returns = boolean
+[[.args]]
+type = buffcode
+[[.args]]
+type = BooleanType3
+default = "BOType011"
+
+[UnitInCheckBuffList]
+title = "单位是否在检测BUFF变化列表中[s]"
+description ="${指定单位}在检测BUFF变化列表中"
+comment = ""
+category = TC_BUFF
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[GetTypeBoolean]
+title = "获得对象布尔值类型数据[s]"
+description ="${对象}类型${类型ID}的布尔值"
+comment = "是否暴击/命中/格挡/暴击治疗只能使用指定单位才能获得正确的值。"
+category = TC_UDDS
+returns = boolean
+[[.args]]
+type = UnitType0
+[[.args]]
+type = BooleanType
+
+[Probability]
+title = "概率事件成立[s]"
+description = "设置概率为：${a}"
+comment = "比如输入数据20，则20%概率该项成立。"
+category = TC_MATH
+returns = boolean
+[[.args]]
+type = real
+default = "0"
+
+[ReverseBoolean]
+title = "相反布尔值[s]"
+description = "获得${布尔值}的反值"
+comment = "获取相反的布尔值。"
+category = TC_MATH
+returns = boolean
+[[.args]]
+type = boolean
+default = "true"
+
+[TimerRunBoolean]
+title = "全局刷新计时器是否运行[s]"
+description = "全局刷新计时器是否运行"
+comment = ""
+category = TC_SJTM
+returns = boolean
+
+[UnitAlive]
+title = "单位存活[s]"
+description = "${单位}存活"
+comment = "common.ai里的native函数"
+category = TC_UDST
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[IsUnitSpelling]
+title = "正在施法[s]"
+description = "${单位}正在施法"
+comment = ""
+category = TC_UDST
+returns = boolean
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+
+[IsTerrainDeepWater]
+title = "地形为深水[s]"
+description = "坐标(${x}，${y})处为深水"
+comment = ""
+category = TC_UDST
+returns = boolean
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[IsTerrainShallowWater]
+title = "地形为浅水[s]"
+description = "坐标(${x}，${y})处为浅水"
+comment = ""
+category = TC_UDST
+returns = boolean
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[IsTerrainLand]
+title = "地形为陆地[s]"
+description = "坐标(${x}，${y})处为陆地"
+comment = ""
+category = TC_UDST
+returns = boolean
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[IsTerrainPlatform]
+title = "地形为平台[s]"
+description = "坐标(${x}，${y})处为平台"
+comment = ""
+category = TC_UDST
+returns = boolean
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[IsTerrainWalkable]
+title = "地形可通行[s]"
+description = "坐标(${x}，${y})处可通行"
+comment = ""
+category = TC_UDST
+returns = boolean
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[GetContinuousTimer_Time]
+title = "获取持续伤害计时器已持续时间[s]"
+description ="获取${持续伤害计时器}已持续时间"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = timer
+
+[GetContinuousTimer_Timeout]
+title = "获取持续伤害计时器最大持续时间[s]"
+description ="获取${持续伤害计时器}最大持续时间"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = timer
+
+[GetUnitBuffAttribute]
+title = "获取指定单位BUFF属性[s]"
+description ="${指定单位}的${魔法效果}的${BUFF属性}"
+comment = "BUFF必须为检测队列中的BUFF，否则无效。非光环模拟Buff能获得无功能数据，可用于自定义触发。"
+category = TC_BUFF
+returns = real
+[[.args]]
+type = unit
+[[.args]]
+type = buffcode
+[[.args]]
+type = BuffData
+default = "BuffDataID1"
+
+[GetBuffRealData]
+title = "获取BUFF实数属性[s]"
+description ="${魔法效果}的${BUFF属性}"
+comment = "BUFF必须为检测队列中的BUFF，否则无效。非光环模拟Buff能获得无功能数据，可用于自定义触发。"
+category = TC_BUFF
+returns = real
+[[.args]]
+type = buffcode
+[[.args]]
+type = BuffData0
+default = "BuffDataID6"
+
+[GetTotalDamage]
+title = "获取指定单位造成的总伤害[s]"
+description ="${伤害来源}造成的总伤害"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+
+[GetTotalHealing]
+title = "获取指定单位的总治疗[s]"
+description ="${治疗来源}的总治疗"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+
+[GetAUTotalDamage]
+title = "获取指定单位对指定单位总伤害[s]"
+description ="${伤害来源}对${被伤害单位}总伤害"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+[[.args]]
+type = unit
+
+[GetAUTotalDPS]
+title = "获取指定单位对指定单位秒伤[s]"
+description ="${指定单位}对指定单位秒伤"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+
+[GetDamagedDamage]
+title = "获取仇恨/DPS统计所指定的单位受到总伤害[s]"
+description = "仇恨/DPS统计所指定的单位受到总伤害"
+comment = ""
+category = TC_UDDS
+returns = real
+
+[GetUnitAttribute]
+title = "获取指定单位某类型属性值[s]"
+description ="${指定单位}的${属性类型}属性值"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+[[.args]]
+type = WUPTypeID
+default = "WUPTypeName1"
+
+[GetItemData]
+title = "获得指定物品相关的实数数据[s]"
+description ="${指定物品}的${类型ID}实数数据"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = item
+[[.args]]
+type = SJTypeID
+default = "SPETypeName1"
+
+[GetItemTypeData]
+title = "获取物品类型相关的实数数据[s]"
+description ="${物品类型}的${类型ID}实数数据"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = itemcode
+[[.args]]
+type = SJTypeID
+
+[GetTypeData]
+title = "获取对象实数类型数据[s]"
+description ="${对象}的类型${类型}的实数型数据"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = agentTypeId
+[[.args]]
+type = WUPTypeID
+
+[GetUnitTotalAttribute]
+title = "获取指定单位面板属性[s]"
+description ="${指定单位}的${ID}的面板属性"
+comment = ""
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+[[.args]]
+type = SJTypeID
+default = "SPETypeName1"
+
+[MimeticdDamageSystem]
+title = "模拟伤害（真实）[s]"
+description = "以${伤害来源单位}为伤害来源，${接受伤害单位}为接受伤害目标，模拟造成${伤害值}的伤害。"
+comment = "此模拟伤害不计算任何其他参数，触发任意伤害（模拟）事件。"
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "100"
+
+[MimeticdHealingSystem]
+title = "模拟治疗（真实）[s]"
+description = "以${治疗来源}对${被治疗单位}模拟造成${治疗量}治疗。"
+comment = "此模拟治疗不计算任何其他参数，触发治疗事件。。"
+category = TC_UDDS
+returns = real
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = real
+default = "100"
+
+[GetMimeticdMagicEventDamage]
+title = "法术伤害（模拟）伤害[s]"
+description = "法术伤害（模拟）伤害"
+comment = "法术伤害（模拟）专用事件响应。"
+category = TC_UDDS
+returns = real
+
+[GetMimeticdMeleeEventDamage]
+title = "物理伤害（模拟）伤害[s]"
+description = "物理伤害（模拟）伤害"
+comment = "物理伤害（模拟）专用事件响应。"
+category = TC_UDDS
+returns = real
+
+[GetReboundDamageEventDamage]
+title = "受到的反弹伤害[s]"
+description = "反弹伤害"
+comment = "响应反弹伤害事件"
+category = TC_UDDS
+returns = real
+
+[GetHealingEventHealing]
+title = "受到的治疗值[s]"
+description = "治疗值"
+comment = "响应模拟治疗事件"
+category = TC_UDDS
+returns = real
+
+[GetUnitHatred]
+title = "获取被伤害单位对伤害来源的仇恨值[s]"
+description ="${被伤害单位}对${伤害来源}的仇恨值"
+comment = ""
+category = TC_HTSY
+returns = real
+[[.args]]
+type = unit
+default = "GetAttackedUnitBJ"
+[[.args]]
+type = unit
+default = "GetAttacker"
+
+[GetMeleeEventDamage]
+title = "普通攻击伤害[s]"
+description = "普通攻击伤害"
+comment = "普通攻击和技能攻击为内部事件，只有不加载重建伤害触发才可使用。"
+category = TC_UDDS
+returns = real
+
+[GetMagicEventDamage]
+title = "技能攻击伤害[s]"
+description = "技能攻击伤害"
+comment = "普通攻击和技能攻击为内部事件，只有不加载重建伤害触发才可使用。"
+category = TC_UDDS
+returns = real
+
+[GetASDEventDamage]
+title = "任意伤害(模拟)[s]"
+description = "任意伤害(模拟)"
+comment = ""
+category = TC_UDDS
+returns = real
+
+[GetNTDEventDamage]
+title = "无类型真实伤害(模拟)[s]"
+description = "无类型真实伤害(模拟)"
+comment = ""
+category = TC_UDDS
+returns = real
+
+[DistanceBetweenCoordinates]
+title = "两坐标间距离[s]"
+description = "坐标(${x1},${y1})与坐标(${x2},${y2})之间距离"
+comment = ""
+category = TC_UDST
+returns = real
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[GetUnitItemBuyIndex]
+title = "获取单位虚拟物品栏物品[s]"
+description ="${单位}虚拟物品栏第${序号}个物品"
+comment = "序号从1开始。"
+category = TC_UDDS
+returns = item
+[[.args]]
+type = unit
+[[.args]]
+type = integer
+default = "1"
+
+[GetItemUpgradeEventItem]
+title = "获取物品升级事件的触发物品[s]"
+description = "升级的物品"
+comment = ""
+category = TC_UDDS
+returns = item
+
+[GetItemPowerUpEventItem]
+title = "获取物品强化等级提升事件的触发物品[s]"
+description = "强化等级提升的物品"
+comment = ""
+category = TC_UDDS
+returns = item
+
+[GetItemPowerDownEventItem]
+title = "获取物品强化等级降低事件的触发物品[s]"
+description = "强化等级降低的物品"
+comment = ""
+category = TC_UDDS
+returns = item
+
+[GetRefurbishTimer]
+title = "获取秒伤刷新计时器[s]"
+description = "秒伤刷新计时器"
+comment = ""
+category = TC_UDDS
+returns = timer
+
+[GetSystemHashtable]
+title = "获取伤害系统主哈希表[s]"
+description = "伤害系统主哈希表"
+comment = ""
+category = TC_UDDS
+returns = hashtable
+
+[GetItemSystemHashtable]
+title = "获取伤害系统物品附属系统哈希表[s]"
+description = "伤害系统物品附属系统哈希表"
+comment = ""
+category = TC_UDDS
+returns = hashtable
+
+[GetGroup]
+title = "指定坐标扇形内的单位[s]"
+description = "以坐标(${x1},${y1})为中心，选取角度为${角度}方向为${角度}，范围为${实数}内的所有单位"
+comment = "会创建单位组.可以被最后创建的单位组所获取"
+category = TC_UDST
+returns = group
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = degree
+default = "0.0"
+[[.args]]
+type = degree
+default = "0.0"
+[[.args]]
+type = real
+default = "200.0"
+
+[Atan2ForCoordinate]
+title = "两坐标间角度[s]"
+description = "坐标(${x1},${y1})与坐标(${x2},${y2})之间角度"
+comment = ""
+category = TC_UDST
+returns = degree
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[GetCliffGradient]
+title = "悬崖坡度[s]"
+description = "坐标(${x}，${y})的悬崖坡度"
+comment = ""
+category = TC_UDST
+returns = degree
+[[.args]]
+type = real
+default = "0.0"
+[[.args]]
+type = real
+default = "0.0"
+
+[GetListEnd]
+title = "自定义事件触发器队列最大索引[s]"
+description ="获取自定义事件（${字符串}）的触发器队列最大索引"
+comment = ""
+category = TC_UDST
+returns = integer
+[[.args]]
+type = string
+
+[GetTriggerList]
+title = "按索引获得自定义事件触发器队列中的触发器[s]"
+description ="获取自定义事件（${字符串}）的触发器队列第${索引}个触发器"
+comment = ""
+category = TC_UDST
+returns = trigger
+[[.args]]
+type = string
+[[.args]]
+type = integer
+default = "0"
+
+[TCStringcodeSystem_GetlastCreatedStringcode]
+title = "最后创建的加密字符串ID[s]"
+description ="获取最后创建的加密字符串的整数索引"
+comment = ""
+category = TC_YDSC
+returns = integer
+
+[TCStringcodeSystem_StringcodeGetInt]
+title = "获取整数[s]"
+description = "在${整数}中获取子索引为${整数}的整数"
+comment = "获取该加密字符串上的整数数值，数据范围[-35819648,35819647]"
+category = TC_YDSC
+returns = integer
+[[.args]]
+type = tcstringcode
+default = stringcode_lastCreatedStringcode
+[[.args]]
+type = integer
+
+[TCStringcodeSystem_StringcodeGetLongInt]
+title = "获取长整数[s]"
+description = "在${整数}中获取子索引为${整数}的整数"
+comment = "获取该加密字符串对象上的整数数值，范围无限制，但占据当前索引和后一个索引"
+category = TC_YDSC
+returns = integer
+[[.args]]
+type = tcstringcode
+default = stringcode_lastCreatedStringcode
+[[.args]]
+type = integer
+
+[TCStringcodeSystem_StringcodeGetStr]
+title = "获取字符串[s]"
+description = "在${整数}中获取字符串"
+comment = "获取该加密字符串对象上的字符串数值"
+category = TC_YDSC
+returns = string
+[[.args]]
+type = tcstringcode
+default = stringcode_lastCreatedStringcode
+
+[TCStringcodeSystem_I2Stringcode]
+title = "按索引获取加密字符串[s]"
+description = "获取索引为${整数}的加密字符串"
+comment = "按照ID获取加密字符串"
+category = TC_YDSC
+returns = tcstringcode
+[[.args]]
+type = integer
+default = "0"
+
+[ReturnType_0]
+title = "单位类型[s]"
+description ="${单位类型}"
+comment = ""
+category = TC_UDDS
+returns = agentTypeId
+[[.args]]
+type = unitcode
+
+[ReturnUnitID_0]
+title = "指定单位[s]"
+description ="${指定单位}"
+comment = ""
+category = TC_UDDS
+returns = agentTypeId
+[[.args]]
+type = unit
+
+[ReturnType_1]
+title = "技能类型[s]"
+description ="${技能类型}"
+comment = ""
+category = TC_UDDS
+returns = agentTypeId
+[[.args]]
+type = abilcode
+
+[ReturnType_2]
+title = "技能类型[s]"
+description ="${技能类型}"
+comment = ""
+category = TC_UDDS
+returns = SkillType
+[[.args]]
+type = abilcode
+
+[ReturnUnitID_1]
+title = "指定单位[s]"
+description ="${指定单位}"
+comment = ""
+category = TC_UDDS
+returns = UnitType0
+[[.args]]
+type = unit
+
+[ReturnType_3]
+title = "单位类型[s]"
+description ="${单位类型}"
+comment = ""
+category = TC_UDDS
+returns = UnitType0
+[[.args]]
+type = unitcode
+
+[ReturnType_5]
+title = "自定义ID[s]"
+description ="${自定义值}"
+comment = ""
+category = TC_UDDS
+returns = SJAttackType
+[[.args]]
+type = integer
+min = 100
+max = 199
+
+[ReturnType_4]
+title = "自定义ID[s]"
+description ="${自定义值}"
+comment = ""
+category = TC_UDDS
+returns = SJDamageType
+[[.args]]
+type = integer
+min = 300
+max = 399
+
+[GetSkillDamageType]
+title = "获取技能类型的伤害类型[s]"
+description ="${技能类型}的伤害类型"
+comment = ""
+category = TC_UDDS
+returns = SkillDamageType
+[[.args]]
+type = abilcode
+
+[ReturnType_6]
+title = "自定义ID[s]"
+description ="${自定义值}"
+comment = ""
+category = TC_UDDS
+returns = PDType0
+[[.args]]
+type = integer
+min = 200
+max = 299
+
+[ReturnType_7]
+title = "自定义ID[s]"
+description ="${自定义值}"
+comment = ""
+category = TC_UDDS
+returns = MDType0
+[[.args]]
+type = integer
+min = 400
+max = 499
+
+[ReturnType_8]
+title = "自定义ID[s]"
+description ="${自定义值}"
+comment = ""
+category = TC_UDDS
+returns = AD_Type
+[[.args]]
+type = integer
+min = 100
+max = 499
+
+[ReturnType_9]
+title = "自定义ID[s]"
+description ="${自定义值}"
+comment = ""
+category = TC_UDDS
+returns = PAMAType
+[[.args]]
+type = integer
+

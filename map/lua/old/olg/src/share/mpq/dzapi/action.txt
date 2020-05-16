@@ -1,0 +1,292 @@
+[DzAPI_Map_MissionComplete]
+title = "活动完成"
+description = "设置 ${玩家}完成任务[${任务类型}][${任务名称}]"
+comment = "雪月团队：完成平台活动[RPG大厅限定]"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "任务类型"
+[[.args]]
+type = string
+default = "任务名称"
+
+[DzAPI_Map_SaveServerValue]
+title = "保存服务器存档"
+description = "保存 ${玩家} 存档[${存档名称}][${存档内容}]"
+comment = "雪月团队：保存服务器存档[RPG大厅限定]"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "存档名称"
+[[.args]]
+type = string
+default = "存档内容"
+
+[DzAPI_Map_Stat_SetStat]
+title = "设置房间显示的数据"
+description = "设置 ${玩家} 房间的 ${key} 项目显示 ${value}"
+comment = "雪月团队：为服务器存档显示的数据，这里miao代表秒退次数！"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "Miao"
+[[.args]]
+type = string
+default = "1"
+
+[DzAPI_Map_Ladder_SubmitBooleanData]
+title = "天梯提交[布尔值]数据"
+description = "提交 ${Player} 天梯项目:${key} 的值为: ${value}"
+comment = "雪月团队：key必须是英文"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "key"
+[[.args]]
+type = boolean
+default = "true"
+
+[DzAPI_Map_Ladder_SubmitIntegerData]
+title = "天梯提交[整数]数据"
+description = "提交 ${Player} 天梯项目:${key} 的值为: ${value}"
+comment = "雪月团队：key必须是英文"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "telephone"
+[[.args]]
+type = integer
+default = "10086"
+
+[DzAPI_Map_Ladder_SetStat]
+title = "天梯提交[字符串]数据"
+description = "提交 ${Player} 天梯项目:${key} 的值为: ${value}"
+comment = "雪月团队：key必须是英文"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "kidding"
+[[.args]]
+type = string
+default = "Yes"
+
+[DzAPI_Map_Stat_SubmitUnitIdData]
+title = "天梯提交[单位类型]数据"
+description = "提交 ${Player} 天梯项目:${key} 的值为: ${value}"
+comment = "雪月团队：key必须是英文"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "Killer"
+[[.args]]
+type = unitcode
+default = "hpea"
+
+[DzAPI_Map_Ladder_SubmitAblityIdData]
+title = "天梯提交[技能类型]数据"
+description = "提交 ${Player} 天梯项目:${key} 的值为: ${value}"
+comment = "雪月团队：key必须是英文"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "what"
+[[.args]]
+type = abilcode
+default = "AHbz"
+
+[DzAPI_Map_Ladder_SubmitItemIdData]
+title = "天梯提交[物品类型]数据"
+description = "提交 ${Player} 天梯项目:${key} 的值为: ${value}"
+comment = "雪月团队：key必须是英文"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "what"
+[[.args]]
+type = itemcode
+default = "ocor"
+
+[DzAPI_Map_Ladder_SubmitTitle]
+title = "天梯提交[获得称号]"
+description = "提交 ${Player} 的称号为 ${value}"
+comment = "雪月团队：key必须是英文"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "一步三卡动如雷霆"
+
+
+[DzAPI_Map_Ladder_SubmitPlayerRank]
+title = "天梯提交[排名]"
+description = "天梯设置：${Player} 的游戏排名为第 [${value}]名"
+comment = "雪月团队：http://war3xy.top"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = integer
+default = "1"
+
+[DzAPI_Map_Ladder_SubmitPlayerExtraExp]
+title = "设置玩家[额外分] <dx>"
+description = "设置：${Player} 的额外分为 [${value}]"
+comment = "雪月团队：http://war3xy.top"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = integer
+default = "1"
+
+[DzAPI_Map_StoreBoolean]
+title = "服务器存储[布尔值]"
+description = "存储 ${Player} 的 [${key}] 为 ${value}"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”B”"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "IsShit"
+[[.args]]
+type = boolean
+default = "true"
+
+[DzAPI_Map_StoreInteger]
+title = "服务器存储[整数]"
+description = "存储 ${Player} 的 [${key}] 为 ${value}"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "phoneNum"
+[[.args]]
+type = integer
+default = "10086"
+
+[DzAPI_Map_StoreReal]
+title = "服务器存储[实数]"
+description = "存储 ${Player} 的 [${key}] 为 ${value}"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”R”"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "dam"
+[[.args]]
+type = real
+default = "0.00"
+
+[DzAPI_Map_StoreString]
+title = "服务器存储[字符串]"
+description = "存储 ${Player} 的 [${key}] 为 ${value}"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”S”"
+category = TC_DZAPI
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "GameName"
+[[.args]]
+type = string
+default = "War3"
+
+[DzAPI_Map_StoreUnitId]
+title = "服务器存储[单位类型]"
+description = "存储 ${Player} 的 [${key}] 为 ${value}"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+script_name = DzAPI_Map_StoreInteger
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "Killer"
+[[.args]]
+type = unitcode
+default = "hpea"
+
+[DzAPI_Map_StoreAbilityId]
+title = "服务器存储[技能类型]"
+description = "存储 ${Player} 的 [${key}] 为 ${value}"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+script_name = DzAPI_Map_StoreInteger
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "Skill"
+[[.args]]
+type = abilcode
+default = "AHbz"
+
+[DzAPI_Map_StoreItemId]
+title = "服务器存储[物品类型]"
+description = "存储 ${Player} 的 [${key}] 为 ${value}"
+comment = "雪月团队：这是经过封装的接口，实际Key会在原Key前面加”I”"
+category = TC_DZAPI
+script_name = DzAPI_Map_StoreInteger
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "Item"
+[[.args]]
+type = abilcode
+default = "afac"
+
+[DzAPI_Map_FlushStoredMission]
+title = "清理服务器数据"
+description = "存储 ${Player} 的key: ${key}"
+comment = "雪月团队：清理封装的接口记得在前面加对应的B、I、R、S"
+category = TC_DZAPI
+script_name = DzAPI_Map_StoreInteger
+[[.args]]
+type = player
+default = Player00
+[[.args]]
+type = string
+default = "Item"

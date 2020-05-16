@@ -1,0 +1,19 @@
+#ifndef ZhiLiaoConstantIncluded
+#define ZhiLiaoConstantIncluded
+
+	#define XGZL_UNS					1
+	#define XGZL_UNE					2
+	#define XGZL_VAL					3
+	#define XGZL_YLB					4
+	#define XGZL_YLB_Num 5
+	#define XGZL_TIMER_LAST				4		//上一个单位
+	#define XGZL_TIMER_NEXT				5		//下一个单位
+	#define XGZL_TIMER_PART				6		//递减 参数
+	#define XGZL_TIMER_VALUE			7		//治疗量
+	#define XGZL_TIMER_NUMBER			7		//弹射次数
+	#define XGZL_TIMER_RANGE			8		//弹射范围
+	#define XGZL_TIMER_LIGHTING			9		//闪电特效
+	#define XGZL_TIMER_SOURCE			10		//来源
+	#define XGZL_TIMER_GROUP			11		//单位组
+
+#endif

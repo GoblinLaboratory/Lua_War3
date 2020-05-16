@@ -1,0 +1,52 @@
+﻿[DefaultTriggerCategories]
+NumCategories=2
+Category02="雪月团队"
+
+[DefaultTriggers]
+NumTriggers=3
+Trigger02Name="雪歌UI_简介"
+Trigger02Comment="最后编辑于：2017/5/6 2:34"
+Trigger02Category=2
+Trigger02Events=0
+Trigger02Conditions=0
+Trigger02Actions=25
+Trigger02Action01=CommentString,"欢迎使用雪月 UI 1.1.3   For   Warcart3 1.24"
+Trigger02Action02=CommentString,"=#=#=#=#=#=增强版JAPI伤害系统 - 须知=#=#=#=#=#=#="
+Trigger02Action03=CommentString,"	  必须先启动伤害系统才能使用伤害系统的相关功能，默认抗性因子:0.06 闪避/格挡上限1.0"
+Trigger02Action04=CommentString,"	  格挡事件/动作也隶属于伤害系统"
+Trigger02Action05=CommentString,"	  在结算事件时可以用布尔值条件来判断是否触发了闪避/暴击等特殊事件，并合理的利用无视本次闪避等函数"
+Trigger02Action06=CommentString,"=#=#=#=#=#=物品组=#=#=#=#=#="
+Trigger02Action07=CommentString,"	  物品组ID 是整数型的参数"
+Trigger02Action08=CommentString,"	  选取物品组(多个动作)暂时不可用"
+Trigger02Action09=CommentString,"=#=#=#=#=#=治疗=#=#=#=#=#="
+Trigger02Action10=CommentString,"	   相当于直接设置单位生命值,只是有利于判断一些事件"
+Trigger02Action11=CommentString,"	   例如:[风语者的祝福]对被你治疗的单位提供额外的护甲和治疗量"
+Trigger02Action12=CommentString,"=#=#=#=#=#=自定义减速=#=#=#=#=#="
+Trigger02Action13=CommentString,"	  自定义减速可以无限叠加"
+Trigger02Action14=CommentString,"=#=#=#=#=#=闪电链=#=#=#=#=#="
+Trigger02Action15=CommentString,"	  模拟闪电链技能，方便捕捉闪电链击中的单位"
+Trigger02Action16=CommentString,"	  闪电链如果设置弹射友军的话，对友军也会造成伤害"
+Trigger02Action17=CommentString,"	  在闪电链击中事件中设置伤害小于等于0的话则不会造成伤害"
+Trigger02Action18=CommentString,"	 闪电链在伤害递减达到小于等于0时就会中断,不会空弹"
+Trigger02Action19=CommentString,"=#=#=#=#=#=医疗波=#=#=#=#=#="
+Trigger02Action20=CommentString,"	 医疗波用了治疗系统，所以你可以用治疗事件来捕捉治疗量"
+Trigger02Action21=CommentString,"=#=#=#=#=#=地形=#=#=#=#=#="
+Trigger02Action22=CommentString,"	 替换地形时需要一定的时间"
+Trigger02Action23=CommentString,"=#=#=#=#=#=魔法书装备栏系统=#=#=#=#=#="
+Trigger02Action24=CommentString,"支持所有单位使用,配套库语句简洁易懂,支持随机性高"
+Trigger02Action25=CommentString,"多用通魔技能"
+
+Trigger03Name="雪月伤害系统"
+Trigger03Comment="最后编辑于：2017/6/2 5:11   喜欢雪月团队请进入 http://x.war3ake.com 到申请板块申请加入我们"
+Trigger03Category=2
+Trigger03Events=0
+Trigger03Conditions=0
+Trigger03Actions=8
+Trigger03Action01=CommentString,"              雪月伤害系统"
+Trigger03Action02=CommentString,"=#=#=#=#=#=非JAPI 雪月伤害系统 - 须知=#=#=#=#=#=#="
+Trigger03Action03=CommentString,"	  必须先启动伤害系统才能使用伤害系统的相关功能，默认抗性因子:0.06 闪避/格挡上限1.0"
+Trigger03Action04=CommentString,"	  格挡事件/动作也隶属于伤害系统"
+Trigger03Action05=CommentString,"	  在结算事件时可以用布尔值条件来判断是否触发了闪避/暴击等特殊事件，并合理的利用无视本次闪避等函数"
+Trigger03Action06=CommentString,"     在触发伤害事件中可以判断伤害类型"
+Trigger03Action07=CommentString,"	  魔抗 与 护甲 一样是一个数值，而不是一个百分比。它们都受抗性因子影响"
+Trigger03Action08=CommentString,"	  概率属性 皆为百分比，用0.01 -> 1.00 表示1% -> 100%"

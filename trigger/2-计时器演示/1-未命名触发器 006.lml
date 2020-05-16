@@ -1,0 +1,18 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+动作
+    PolledWait
+        常量: 5.00
+    ReviveHeroLoc
+        函数: GetTriggerUnit
+        函数: GetRectCenter
+            函数: GetPlayableMapRect
+        预设: ShowHideHide

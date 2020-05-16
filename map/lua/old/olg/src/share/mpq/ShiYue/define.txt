@@ -1,0 +1,17 @@
+﻿[TriggerCategories]
+TC_SYTL=血滴偷懒类[X],ReplaceableTextures\CommandButtons\BTNCripple.blp
+TC_SYTJ=血滴特技[X],ReplaceableTextures\CommandButtons\BTNPotionOfVampirism.blp
+
+[TriggerTypes]
+
+TreesType=0,0,0,选择是否摧毁,integer
+CrashType=0,0,0,选择是否碰撞,integer
+
+[TriggerParams]
+TreesType_FALSE=0,TreesType,0,无视树木
+TreesType_Impact=0,TreesType,1,撞树停止
+TreesType_TRUE=0,TreesType,2,摧毁树木
+
+CrashType_Through=0,CrashType,0,无视单位碰撞
+CrashType_Building=0,CrashType,1,不无视建筑
+CrashType_FALSE=0,CrashType,2,不无视单位碰撞

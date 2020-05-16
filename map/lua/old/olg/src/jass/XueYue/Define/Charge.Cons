@@ -1,0 +1,28 @@
+#ifndef ChargeConstantIncluded
+#define ChargeConstantIncluded
+
+	#define Charge_Timer 0
+	#define Charge_UnitS 1
+	#define Charge_UnitE 2
+	#define Charge_Time 3
+	#define Charge_Range 4
+	#define Charge_Follow 5
+	#define Charge_KillTree 6
+	#define Charge_Impact 7
+	#define Charge_Build 8
+	#define Charge_Path 9
+	#define Charge_EffectS 10
+	#define Charge_Bone 11
+	#define Charge_EffectE 12
+	#define Charge_X 13
+	#define Charge_Y 14
+	#define Charge_Dist 15
+	#define Charge_Rect 15
+	#define Charge_Group 16
+	#define Charge_Atime 17
+	#define Charge_Timeout 18
+	#define Charge_Damage 19
+	#define Charge_DamageSource 20
+	#define Charge_Angle 20
+
+#endif

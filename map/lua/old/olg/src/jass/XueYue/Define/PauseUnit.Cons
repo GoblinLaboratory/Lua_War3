@@ -1,0 +1,8 @@
+#ifndef PauseUnitConstantIncluded
+#define PauseUnitConstantIncluded
+
+	#define PauseUnit_Time 496630330 //哈希值（暂停Time）
+	#define PauseUnit_Timer -1944308477 //哈希值（暂停Timer）
+	#define PauseUnit_Unit -2037511873 //哈希值（暂停Unit）
+
+#endif

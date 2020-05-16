@@ -1,0 +1,17 @@
+﻿[SY_JumpEvent_End_Reg]
+title = "任意单位 完成跳跃"
+description = "任意单位 完成跳跃"
+comment = "血滴特技:只能响应血滴的特技跳跃，可以捕获伤害来源和跳跃单位"
+category = TC_SYTJ
+
+[SYCharge_Event_End_Reg]
+title = "任意单位 完成冲锋"
+description = "任意单位 完成冲锋"
+comment = "血滴特技:只能响应血滴的特技冲锋，可以捕获伤害来源和冲锋单位"
+category = TC_SYTJ
+
+[SYCharge_Event_Dam_Reg]
+title = "任意单位 被冲锋伤害"
+description = "任意单位 被冲锋伤害"
+comment = "血滴特技:只能响应血滴的特技冲锋，可以捕获伤害来源和冲锋单位以及受伤单位"
+category = TC_SYTJ

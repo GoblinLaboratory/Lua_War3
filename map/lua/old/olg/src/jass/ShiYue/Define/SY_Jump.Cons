@@ -1,0 +1,18 @@
+#ifndef SY_JumpConstantIncluded
+#define SY_JumpConstantIncluded
+
+  //独跳跃使用                                            //跳跃 1*1000
+  #define SY_Speed  1001          //初速度
+  #define SY_Times  1002          //运行次数
+  #define SY_Jumper  1003         //跳跃者
+  #define SY_Jumped  1004         //被跳跃者
+  #define SY_Angle 1005           //角度
+  #define SY_Highest  1006        //最高高度
+  #define SY_AllTimes  1007       //总运行次数
+  #define SY_ChangeTime  1008     //达最高点次数
+  #define SY_EachDistance  1009   //每次移动距离
+  #define SY_Index  1010          //标记
+  #define SY_FlyHigh 1011         //初始高度
+
+  
+#endif

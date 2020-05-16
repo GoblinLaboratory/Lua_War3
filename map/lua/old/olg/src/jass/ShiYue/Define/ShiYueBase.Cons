@@ -1,0 +1,18 @@
+#ifndef ShiYueBaseConstantIncluded
+#define ShiYueBaseConstantIncluded 
+
+ //个中通用
+  #define SY_FW  1                //范围
+  #define SY_Damage  2            //伤害值
+  #define SY_Damager  3           //伤害者
+  #define SY_Overdeath  4         //完成后死亡
+  #define SY_EffectWays  5        //特效路径
+  #define SY_OriginLoc  6         //初始位置
+  #define SY_AttackType  7        //攻击类型
+  #define SY_DamageType  8        //伤害类型
+  #define SY_WeaponType  9        //武器类型
+  #define SY_IsAttack 10             //是攻击伤害
+  #define SY_IsFar 11                //是远程伤害
+  #define HA_CONS 12              //是类型储存
+  
+#endif

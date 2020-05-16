@@ -1,0 +1,229 @@
+﻿[SY_AddAbility]
+title = "添加技能[X]"
+description = "为 ${单位} 添加 ${技能}"
+comment = "血滴偷懒类:给目标单位成功添加技能则打开技能永久性，否则无动作"
+script_name = SY_AddAbility
+category = TC_SYTL
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = abilcode
+default = "Aams"
+
+[SY_DeleteAbility]
+title = "删除技能[X]"
+description = "为 ${单位} 删除 ${技能}"
+comment = "血滴偷懒类:给目标单位删除并关闭技能永久性"
+script_name = SY_DeleteAbility
+category = TC_SYTL
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = abilcode
+default = "Aams"
+
+[SY_Jump]
+title = "特殊跳跃[TJ]"
+description = "规定伤害来源 ${单位} ，让${单位}向${位置}跳跃,运行周期${实数},总耗时${实数},高度${实数},抵达最高点耗时${实数}。使用初始上升速度${实数}对范围${实数}内单位造成点${伤害}(${是} 攻击伤害, ${是}远程攻击) 攻击类型: ${AttackType} 伤害类型: ${DamageType} 武器类型: ${WeaponType} 完成后杀死单位${是},特效:${路径},标记为${整数}"
+comment = "可以控制目标抵达最高高度时的位置"
+script_name = SY_Jump
+category = TC_SYTJ
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = location
+default = "GetSpellTargetLoc"
+[[.args]]
+type = real
+default = "0.01"
+min = 0.01
+[[.args]]
+type = real
+default = "0.01"
+min = 0.01
+[[.args]]
+type = real
+default = "250.00"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "500.0"
+[[.args]]
+type = isnotoption
+default = "IsNotIs"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = attacktype
+default = "AttackTypeNormal"
+[[.args]]
+type = damagetype
+default = "DamageTypeNormal"
+[[.args]]
+type = weapontype
+default = "WEAPON_TYPE_WHOKNOWS"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = modelfile
+default = "Abilities\\Spells\\Other\\TalkToMe\\TalkToMe.mdl"
+[[.args]]
+type = integer
+default = "233333"
+
+[SYCharge_Init]
+title = "初始化冲锋系统[X]"
+description = "创建一个${单位},在坐标(${x},${Y})"
+comment = "弑月:单位必须拥有一个伐木的技能,最好用食尸鬼或者地精的(复制最佳).创建的位置最好是不可能用到的!"
+script_name = SYCharge_Init
+category = TC_SYTJ
+[[.args]]
+type = unitcode
+default = "ugho"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "0.00"
+
+[SYCharge_ToDegree]
+title = "全局冲锋对角度[TJ]"
+description = "规定伤害来源 ${单位},让${单位}向${角度}冲锋${距离},运行周期${实数},总耗时${实数},对沿途范围${实数}内单位造成伤害${100}点(${是}重复伤害,${是}攻击伤害,${是}远程攻击,${是}无视地形) ${摧毁树木},${单位碰撞},攻击类型: ${AttackType} 伤害类型: ${DamageType} 武器类型: ${WeaponType},特效:${路径},标记为${整数}"
+comment = "弑月:采取全局变量制作的冲锋,运行效率较高,不耗用过多内存.必须初始化才能使用!"
+script_name = SYCharge_ToDegree
+category = TC_SYTJ
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = degree
+default = "90.0"
+[[.args]]
+type = real
+default = "200.1"
+[[.args]]
+type = real
+default = "0.03"
+[[.args]]
+type = real
+default = "1.00"
+[[.args]]
+type = real
+default = "90.00"
+[[.args]]
+type = real
+default = "100.0"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = isnotoption
+default = "IsNotIs"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = TreesType
+default = "TreesType_FALSE"
+[[.args]]
+type = CrashType
+default = "CrashType_FALSE"
+[[.args]]
+type = attacktype
+default = "AttackTypeNormal"
+[[.args]]
+type = damagetype
+default = "DamageTypeNormal"
+[[.args]]
+type = weapontype
+default = "WEAPON_TYPE_WHOKNOWS"
+[[.args]]
+type = modelfile
+default = "Abilities\\Spells\\Other\\TalkToMe\\TalkToMe.mdl"
+[[.args]]
+type = integer
+default = "369"
+
+[SYCharge_ToLoc]
+title = "全局冲锋对点[TJ]"
+description = "规定伤害来源 ${单位},让${单位}向${点}冲锋,运行周期${实数},总耗时${实数},对沿途范围${实数}内单位造成伤害${100}点(${是}重复伤害,${是}攻击伤害,${是}远程攻击,${是}无视地形) ${摧毁树木},${单位碰撞},攻击类型: ${AttackType} 伤害类型: ${DamageType} 武器类型: ${WeaponType},特效:${路径},标记为${整数}"
+comment = "弑月:采取全局变量制作的冲锋,运行效率较高,不耗用过多内存.必须初始化才能使用!"
+script_name = SYCharge_ToLoc
+category = TC_SYTJ
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = location
+default = "GetSpellTargetLoc"
+[[.args]]
+type = real
+default = "0.03"
+[[.args]]
+type = real
+default = "1.00"
+[[.args]]
+type = real
+default = "90.00"
+[[.args]]
+type = real
+default = "100.0"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = isnotoption
+default = "IsNotIs"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = isnotoption
+default = "IsNotNot"
+[[.args]]
+type = TreesType
+default = "TreesType_FALSE"
+[[.args]]
+type = CrashType
+default = "CrashType_FALSE"
+[[.args]]
+type = attacktype
+default = "AttackTypeNormal"
+[[.args]]
+type = damagetype
+default = "DamageTypeNormal"
+[[.args]]
+type = weapontype
+default = "WEAPON_TYPE_WHOKNOWS"
+[[.args]]
+type = modelfile
+default = "Abilities\\Spells\\Other\\TalkToMe\\TalkToMe.mdl"
+[[.args]]
+type = integer
+default = "369"

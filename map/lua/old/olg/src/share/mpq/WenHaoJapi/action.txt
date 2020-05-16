@@ -1,0 +1,449 @@
+﻿[WenHaoJapi_Init]
+title = "初始化内置Japi"
+description = "初始化内置Japi"
+comment = "雪月团队: 使用内置Japi前必须在任意地方运行一次该初始化"
+category = XG_WenHaoJapi
+
+[EXSetTrackableXY]
+title = "设置可追踪物坐标"
+description = "设置${可追踪物}坐标: ( ${x}, ${y} )"
+comment = "雪月团队: "
+category = XG_WenHaoJapi
+[[.args]]
+type = trackable
+[[.args]]
+type = real
+default = "0"
+[[.args]]
+type = real
+default = "0"
+
+[LocalOrder]
+title = "本地发布[无目标]命令"
+description = "本地发布${命令} ${标识}"
+comment = "雪月团队: 队列=shift+命令 瞬发=无视控制 恢复=完成命令后恢复之前的指令"
+category = XG_WenHaoLocalJapi
+[[.args]]
+type = ordercodenotarg
+default = "OrderCodeStop"
+[[.args]]
+type = WenHaoD3dFlag
+default = "WenHaoD3dFlag_FIFO"
+
+[LocalPointOrder]
+title = "本地发布[坐标]命令"
+description = "本地发布${命令}到 (${x},${y}) ${标识}"
+comment = "雪月团队: 队列=shift+命令 瞬发=无视控制 恢复=完成命令后恢复之前的指令"
+category = XG_WenHaoLocalJapi
+[[.args]]
+type = ordercodeptarg
+default = "OrderCodeMove"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = real
+default = "0.00"
+[[.args]]
+type = WenHaoD3dFlag
+default = "WenHaoD3dFlag_FIFO"
+
+[LocalTargetOrder]
+title = "本地发布[目标]命令"
+description = "本地发布${命令} 对 ${单位} ${标识}"
+comment = "雪月团队: 队列=shift+命令 瞬发=无视控制 恢复=完成命令后恢复之前的指令"
+category = XG_WenHaoLocalJapi
+[[.args]]
+type = ordercodeutarg
+default = "OrderCodeAttackUnit"
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = WenHaoD3dFlag
+default = "WenHaoD3dFlag_FIFO"
+
+[SetUnitAbilityButtonShow]
+title = "设置单位技能按钮显示/隐藏"
+description = "设置${单位}的${技能} ${状态}"
+comment = "雪月团队: 效果等同于等同于禁用玩家技能，要用的时候可以显示再发布命令然后再隐藏掉"
+category = XG_WenHaoLocalJapi
+[[.args]]
+type = unit
+default = "GetTriggerUnit"
+[[.args]]
+type = abilcode
+default = "AHfs"
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+
+[ShowFpsText]
+title = "显示/隐藏 FPS文本"
+description = "${显示} FPS文本"
+comment = "雪月团队: FPS即帧数 会显示再魔兽的时间下方"
+category = XG_WenHaoLocalJapi
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+
+[DestroyFont]
+title = "销毁字体"
+description = "销毁字体 ${hwnd}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "100000"
+
+[SetFontWidth]
+title = "设置字体宽度"
+description = "设置字体: ${hwnd} 的宽度为 ${width}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "100000"
+[[.args]]
+type = integer
+default = "12"
+
+[SetFontHeight]
+title = "设置字体高度"
+description = "设置字体: ${hwnd} 的高度为 ${height}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "100000"
+[[.args]]
+type = integer
+default = "12"
+
+[SetFontWeight]
+title = "设置字体粗细"
+description = "设置字体: ${hwnd} 的粗细为 ${height}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "100000"
+[[.args]]
+type = integer
+default = "12"
+
+[SetFontItalic]
+title = "设置字体倾斜"
+description = "设置字体: ${hwnd} ${倾斜}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "100000"
+[[.args]]
+type = WenHaoD3dItalic
+default = "WenHaoD3dItalic_TRUE"
+
+[SetFontFaceName]
+title = "设置字体类型"
+description = "设置字体: ${hwnd} 的类型为 ${type}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "100000"
+[[.args]]
+type = string
+default = "type"
+
+[SetTextString]
+title = "设置文本内容"
+description = "设置文本: ${hwnd} 的内容为 ${text}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "1111111"
+[[.args]]
+type = string
+default = "问号 内置Japi 1.32"
+
+[SetTextX]
+title = "设置文本X轴"
+description = "设置文本: ${hwnd} 的X轴为 ${X}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "1111111"
+[[.args]]
+type = real
+default = "500"
+
+[SetTextY]
+title = "设置文本Y轴"
+description = "设置文本: ${hwnd} 的Y轴为 ${X}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "1111111"
+[[.args]]
+type = real
+default = "500"
+
+[SetTextTime]
+title = "获取文本剩余生命周期"
+description = "设置文本: ${hwnd} 的生命周期为 ${time}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "1111111"
+[[.args]]
+type = integer
+default = "2.5"
+
+[SetTextColor]
+title = "设置文本颜色"
+description = "设置文本: ${hwnd} 的颜色为 ${ARGB}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "1111111"
+[[.args]]
+type = integer
+default = "0"
+
+[DestroyTexture]
+title = "销毁图像"
+description = "销毁图像: ${hwnd}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default = "234567"
+
+[SetTextureX]
+title = "设置图像X轴"
+description = "设置图像:${img} 的X轴为 ${x}"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = real
+default ="200"
+
+[SetTextureY]
+title = "设置图像Y轴"
+description = "设置图像:${img} 的Y轴为 ${x}"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = real
+default ="400"
+
+[SetTextureWidth]
+title = "设置图像宽度"
+description = "设置图像:${img} 的宽度为 ${w}"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = real
+default ="400"
+
+[SetTextureHeight]
+title = "设置图像高度"
+description = "设置图像:${img} 的高度为 ${w}"
+comment = "雪月团队: 相对于魔兽的"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = real
+default ="200" 
+
+[SetTextureColor]
+title = "设置图像颜色"
+description = "设置图像:${img} 的颜色为 ${color}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = integer
+default ="0"
+
+[SetTextureLevel]
+title = "设置图像层次"
+description = "设置图像:${img} 的层次为 ${lv}"
+comment = "雪月团队: 层次越高显示得越上层"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = integer
+default ="9"
+
+[SetTextureRotation]
+title = "设置图像旋转角度"
+description = "设置图像:${img} 的旋转角度为 ${degree}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = degree
+default ="90"
+
+[SetTextureSrcRect]
+title = "设置图像切割区域"
+description = "设置图像:${img} 的切割区域为 ${rect}"
+comment = "雪月团队: 如128*256的矩形应为(左上x0,左上y0,右下x128,右下y256)"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = rect
+default ="GetWorldBounds"
+
+[SetTexture]
+title = "设置图像的图片"
+description = "设置图像:${img} 的图片为 ${img}"
+comment = "雪月团队: 改变图像的图片为一张新的图片"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = string
+default = "ReplaceableTextures\\Splats\\AuraRune9b.blp"
+
+[SetTextureShow]
+title = "设置图像显示/隐藏"
+description = "设置图像:${img} ${sh}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+
+[SetTextureTrigger]
+title = "设置图是否像响应事件"
+description = "设置图像:${img} ${sh}事件"
+comment = "雪月团队: 默认响应事件，关闭后该图像将不会触发图像事件"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+[[.args]]
+type = WenHaoD3dResponse
+default = "WenHaoD3dResponse_TRUE"
+
+[EnableTextureTrigger]
+title = "开启图像的触发器"
+description = "开启图像:${img} 的触发器"
+comment = "雪月团队: 其实就是设置图像响应事件"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+
+[DisableTextureTrigger]
+title = "关闭图像的触发器"
+description = "关闭图像:${img} 的触发器"
+comment = "雪月团队: 其实就是设置图像不响应事件"
+category = XG_WenHaoD3D
+[[.args]]
+type = integer
+default ="234567"
+
+[XG_TextureRegEvent]
+title = "为触发器注册图像事件"
+description = "为${触发器}注册${图像}事件"
+comment = "雪月团队: 该事件能捕捉到所有按键值、包括鼠标，无法捕捉Enter【此为异步,只有按按键的玩家才响应】"
+category = XG_WenHaoD3D
+[[.args]]
+type = trigger
+default ="GetTriggeringTrigger"
+[[.args]]
+type = integer
+default ="234567"
+
+[XG_TextrueRemoveEvent]
+title = "为触发器删除图像事件"
+description = "为${触发器}删除${图像}事件"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = trigger
+default ="GetTriggeringTrigger"
+[[.args]]
+type = integer
+default ="234567"
+
+[SetKeyboard]
+title = "设置按键状态"
+description = "设置按键:${key} ${stat}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = WenHaoD3dKey
+default ="WenHaoD3dKey_A"
+[[.args]]
+type = WenHaoKeyStat
+default = "WenHaoKeyStat_TRUE"
+
+[ClickKeyboard]
+title = "模拟按键"
+description = "按一次:${key}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = WenHaoD3dKey
+default ="WenHaoD3dKey_A"
+
+[ShowConsole]
+title = "显示/隐藏魔兽控制台UI"
+description = "${key} 魔兽控制台UI"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = showhideoption
+default = "ShowHideShow"
+
+[SetLittleMapX]
+title = "设置小地图图形位置X轴向量"
+description = "设置小地图图形位置X轴向量为: ${value}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = real
+default = "400"
+
+[SetLittleMapY]
+title = "设置小地图图形位置Y轴向量"
+description = "设置小地图图形位置Y轴向量为: ${value}"
+comment = "雪月团队: "
+category = XG_WenHaoD3D
+[[.args]]
+type = real
+default = "400"
+

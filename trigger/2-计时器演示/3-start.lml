@@ -1,0 +1,24 @@
+事件
+    MapInitializationEvent
+条件
+动作
+    Cheat
+        常量: 'exec-lua: "runtime_init"'
+    Cheat
+        常量: 'exec-lua: "Initialization"'
+    Cheat
+        常量: 'exec-lua: "War3\AnyDamagedSystem"'
+    Cheat
+        常量: 'exec-lua: "War3\DamagedSystemTrigger"'
+    Cheat
+        常量: 'exec-lua: "War3\ChoiceHero"'
+    Cheat
+        常量: 'exec-lua: "test\test"'
+    Cheat
+        常量: 'exec-lua: "War3\ManyHeroItemSystem"'
+    Cheat
+        常量: 'exec-lua: "War3\equipsystem"'
+    Cheat
+        常量: 'exec-lua: "War3\RemoveEquipment"'
+    Cheat
+        常量: 'exec-lua: "War3\Update"'

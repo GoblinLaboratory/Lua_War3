@@ -1,0 +1,70 @@
+[TriggerRegisterEvent]
+title = "自定义事件[s]"
+description = "自定义事件${字符串}"
+comment = "用哈希表以注册该事件的触发器整数地址为主索引来储存需要响应的注册该事件的触发器的参数。用哈希表以被触发的触发器整数地址为主索引来获得需要响应的注册该事件的触发器的参数。"
+category = TC_UDST
+[[.args]]
+type = string
+
+[TriggerRegisterAnyUnitEnterEvent]
+title = "任意单位进入地图区域事件[s]"
+description = "任意单位进入地图区域(包含直接放置在地图上的单位)。"
+comment = ""
+category = TC_UDST
+
+[TriggerRegisterDoubleClickEvent]
+title = "双击单位事件[s]"
+description = "任意单位被双击"
+comment = "用触发单位来获取被双击的单位(注意如果附近有同类型单位，且属于同一玩家，双击不会触发事件，而会选择相同类型的单位。)"
+category = TC_UDST
+
+[TriggerRegisterAnyUnitKilledEvent]
+title = "任意单位被杀死事件(伤害系统专用)[s]"
+description = "任意单位被杀死事件(伤害系统专用)"
+comment = "伤害系统专用，请不要与魔兽自带事件混淆。"
+category = TC_UDDS
+
+[TriggerRegisterAnyUnitBuffEvent]
+title = "检测到BUFF获得/失去事件[s]"
+description = "检测BUFF${tp}事件。"
+comment = "需要初始化BUFF检测系统才能使用BUFF事件,且BUFF需要先注册。注意在检测BUFF系统触发中，条件要写在动作中，写在触发的触发条件中将无效。"
+category = TC_BUFF
+[[.args]]
+type = SJBuffEventType
+default = "BuffEvent0"
+
+[TriggerRegisterAnyUnitDamagedEvent]
+title = "任意单位受某种伤害事件[s]"
+description = "任意单位受${攻击事件索引}事件。"
+comment = "普通攻击和技能攻击为内部事件，只有不加载重建伤害触发才可使用。若触发器动作里有对单位模拟某种伤害动作，会引起死循环，最好加入条件判断或在模拟某种伤害前关闭当前触发器。"
+category = TC_UDDS
+[[.args]]
+type = AttackEventType
+default = "MeleeEventIndex"
+
+[TriggerRegisterAnyUnitHealingEvent]
+title = "任意单位受模拟治疗事件[s]"
+description = "任意单位受模拟治疗事件。"
+comment = "若触发器动作里有对单位模拟治疗动作，会引起死循环，最好加入条件判断或在模拟治疗前关闭当前触发器。"
+category = TC_UDDS
+
+[TriggerRegisterAnyUnitReboundDamageEvent]
+title = "任意单位受反弹伤害事件[s]"
+description = "任意单位受反弹伤害事件。"
+comment = "若触发器动作里有对单位模拟伤害动作，会引起死循环，最好加入条件判断或在模拟伤害前关闭当前触发器。"
+category = TC_UDDS
+
+[TriggerRegisterAnyItemUpgradeEvent]
+title = "任意物品升级事件[s]"
+description = "任意物品升级事件"
+comment = ""
+category = TC_UDDS
+
+[TriggerRegisterAnyItemPowerEvent]
+title = "任意物品强化等级提升/降低事件[s]"
+description = "任意物品强化等级${tp}事件。"
+comment = ""
+category = TC_UDDS
+[[.args]]
+type = ItemPowerType
+default = "ItemPowerType0"
